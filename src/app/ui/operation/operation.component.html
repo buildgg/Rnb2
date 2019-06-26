@@ -1,0 +1,7 @@
+<div class="rnb-dropdown">
+  <button class="rnb-button-dropdown" (click)="toggle()" >Операции</button>
+  <ul *ngIf="isVisible" class="rnb-list-dropdown" @showOperation>
+    <li *ngFor="let oper of operations"
+        (click)="selectedOperation(oper)">{{oper}}</li>
+  </ul>
+</div>

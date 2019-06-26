@@ -1,0 +1,57 @@
+.rnb-container {
+  display: flex;
+  flex-direction: column;
+  color: #547191;
+  height: 100%;
+
+
+  /*background-color: rgba(122, 166, 204, 0.26);*/
+/*  background-color: #e9ecef;*/
+ /* color: #0000008a;*/
+
+ /* в дальнейшем удалю*/
+ /* min-height: 860px;*/
+  /*height: 92vh;*/
+/*  margin: 10px 10px 0 10px;
+  padding: 10px;*/
+ /* min-height: calc(100vh - 70px);*/
+}
+.rnb-content {
+  background-color: #FFFFFF;
+  margin: 10px 10px 0 10px;
+  padding: 10px;
+  /*box-shadow: 2px 2px 8px #1771CB;*/
+  /*box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.19);*/
+  box-shadow: 2px 2px 8px rgba(122, 166, 204, 0.26);
+  display: flex;
+}
+.rnb-content-title {
+  position: relative;
+  color: #FFFFFF;
+  background-color: #1771cb;
+  background-image: linear-gradient(to right, #0a335c 5%, #1887eb);
+/*  background-image: linear-gradient(to right, #1b72d5 20%, #1771cb);*/
+  margin: 0;
+  padding-top: 9px;
+  padding-left: 25px;
+  padding-bottom: 5px;
+  width: 45%;
+  font-size: 20px;
+  border-radius: 3px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.rnb-content-title::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 0;
+  height: 0;
+  border: 20px solid #FFFFFF;
+  border-left-color: #1984e2;
+
+  /*border-left-color: #1b6dcc;*/
+    /*#1a84e2;*/
+
+}

@@ -1,0 +1,110 @@
+.mat-header-cell {
+  font-size: 14px;
+  border-bottom: 2px solid #1771cb;
+}
+.mat-cell {
+  padding-right: 10px;
+}
+.mat-sort-header-arrow {
+  /*color: #157541;*/
+  margin: 0;
+  left: -1px;
+}
+.selected{
+  background-color: #e9ecef;
+}
+.icon-operations {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  max-width: 140px;
+}
+.icon-operations a {
+  padding: 10px 15px 10px 15px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.icon-operations .link-operation {
+  position: relative;
+}
+.link-operation::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+}
+ .edit-operation {
+   background: url("../../../../assets/img/edit-24.png") no-repeat 0 0;
+   top: 4px;
+   opacity: 0.6;
+ }
+
+.delete-operation {
+  background: url("../../../../assets/img/delete-test-24.png") no-repeat 0 0;
+  opacity: 0.6;
+  width: 25px;
+  height: 25px;
+  top: 4px;
+}
+
+.browser-operation {
+  background: url("../../../../assets/img/next-blue-24.png") no-repeat 0 0;
+  top: 4px;
+  opacity: 0.6;
+}
+
+.link-operation:hover,
+.link-operation:focus,
+.link-operation:active {
+  opacity: 1;
+}
+.rnb-tooltip {
+  position: relative;
+  display: inline-block;
+/*  border-bottom: 1px dotted black;*/
+}
+
+.rnb-tooltip .rnb-tooltiptext {
+  visibility: hidden;
+  width: 80px;
+  background-color: rgba(97, 97, 97, .9);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -50px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 10px;
+}
+
+.rnb-tooltip .rnb-tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+ /* margin-left: -5px;*/
+  /*border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;*/
+}
+
+.rnb-tooltip:hover .rnb-tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+

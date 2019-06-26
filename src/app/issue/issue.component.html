@@ -1,0 +1,28 @@
+<rnb-layout [isVisibleHiddenBox]="visibleHiddenBoxLayout">
+  <div class="rnb-box">
+    <rnb-filter (filterItems)="onFilterItems($event)"></rnb-filter>
+    <rnb-operation></rnb-operation>
+    <button class="rnb-button-add">Добавить</button>
+  </div>
+
+  <div class="hide-box" #hiddenBox *ngIf="true">
+    <rnb-filter-list [list]="filterItems"
+                     (lastItemFilter)="onLastItemFilter()"
+    ></rnb-filter-list>
+  </div>
+
+  <rnb-table class=""
+    [columns]="columns"
+    [dataList]="issueList"
+    [selectedRowId]="selectedRowId">
+  </rnb-table>
+</rnb-layout>
+
+
+<!--    [tableButtons]="tableButtons"
+ [filterValue]="filterValue"
+    (clickUpdate)="onClickUpdate($event)"
+    (clickDelete)="onClickDelete($event)"
+    (clickView)="onClickView($event)"
+
+-->

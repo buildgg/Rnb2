@@ -1,0 +1,28 @@
+<header class="main-header">
+  <nav class="main-navigation">
+    <a class="main-header-logo">
+      <img src="../../../../assets/img/rnb-logo.png"
+           width="154"
+           height="70"
+           alt="Логотип RnB">
+    </a>
+    <div class="main-navigation-wrapper">
+      <ul class="main-nav-list user-time">
+        <li class="user-time-start icon-before">Время входа &#8595;
+          <span class="user-info user-date">{{loginTime | date:'HH:mm:ss'}}</span>
+        </li>
+      </ul>
+      <ul class="main-nav-list tool-divider"></ul>
+      <ul class="main-nav-list user-information">
+        <li class="user-img icon-before">Пользователь &#8595; <span class="user-info user-name">
+          {{loginUser}}
+        </span></li>
+      </ul>
+      <ul class="main-nav-list tool-divider"></ul>
+      <ul class="main-nav-list user-login">
+        <li>
+          <a class="user-login-link icon-before" href="">Выйти</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

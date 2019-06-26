@@ -1,0 +1,128 @@
+.main-header {
+  height: 70px;
+  background-color: #0a335c;
+  background-image: linear-gradient(to right, #0a335c 10%, #086ab9);
+/*  border-bottom: 1px #FFFFFF solid;*/
+  /*#1771cb
+  #086ab9*/
+}
+.main-header-logo {
+  height: 70px;
+}
+.main-navigation {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.main-navigation-wrapper {
+  display: flex;
+  max-height: 70px;
+}
+.main-nav-list {
+  /*display: flex;*/
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.user-login a {
+  display: block;
+  padding: 25px 20px;
+  text-decoration: none;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.user-information,
+.user-time
+{
+  color: #FFFFFF;
+  padding: 15px 20px;
+/*  box-sizing: border-box;*/
+
+}
+.user-info {
+  display: block;
+  text-align: center;
+}
+.tool-divider {
+  width: 0;
+  border-left: 1px solid #6589ab;
+  height: 40px;
+  margin-top: 15px;
+}
+.user-login .user-login-link {
+  padding-left: 35px;
+  position: relative;
+}
+.user-information .user-img {
+  padding-left: 25px;
+  position: relative;
+}
+.user-time .user-time-start{
+  padding-left: 25px;
+  position: relative;
+}
+
+.icon-before::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 26px;
+  left: 12px;
+}
+.user-login-link::before {
+  background: url("../../../../assets/img/logout2-white-16.png") no-repeat 0 0;
+}
+.user-img::before {
+  top: 2px;
+  left: 2px;
+  background: url("../../../../assets/img/user-white-16.png") no-repeat 0 0;
+  opacity: 0.8;
+}
+.user-time-start::before {
+  top: 2px;
+  left: 2px;
+  background: url("../../../../assets/img/time-white-16.png") no-repeat 0 0;
+
+}
+.user-login-link:hover {
+  background-color: #175db1;
+  /* background-color: #08569c;*/
+}
+
+@media (max-width: 630px) {
+  .main-header {
+    background-color: #0a335c;
+  }
+  .main-navigation {
+    display: flex;
+    width: 630px;
+    font-size: 16px;
+    flex-direction: column;
+    background-color: #0a335c;
+  }
+  .main-navigation-wrapper {
+    max-height: 70px;
+    flex-direction: column;
+    width: 620px;
+    background-color: #0a335c;
+  }
+  .main-header-logo {
+    order: 0;
+  }
+  .user-information {
+    order: 2;
+  }
+  .user-time {
+    order: 3;
+  }
+  .icon-before {
+    order: 4;
+  }
+  .tool-divider {
+    display: none;
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "issuers": [
+    {
+      "description": "Очень необходимо два офисных стулья для чень необходимо",
+      "count": "4",
+      "budgetArticleType": "",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "2017-02-12",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите",
+      "id": "1"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "2",
+      "budgetArticleType": "Расходы на МНА",
+      "issuer": "Марко Лукич Кропивни",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите",
+      "id": "2"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "3",
+      "budgetArticleType": "Расходы на материалы",
+      "issuer": "Марко Лукич Кропивни",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите",
+      "id": "3"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "5",
+      "budgetArticleType": "Расходы на материалы",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите",
+      "id": "4"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "3",
+      "budgetArticleType": "Расходы на МНА",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "2016-07-22T00:00:00.000Z",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите",
+      "id": "5"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "2",
+      "budgetArticleType": "Расходы на МНА",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите rerty 555555555",
+      "id": "6"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "4",
+      "budgetArticleType":  "Расходы на ЗП",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите rerty 555555555",
+      "id": "7"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "4",
+      "budgetArticleType":  "Расходы на ЗП",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 24м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите rerty 555555555",
+      "id": "8"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "4",
+      "budgetArticleType": "Расходы на материалы",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите rerty 555555555",
+      "id": "9"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "4",
+      "budgetArticleType": "Расходы на материалы",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 223м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите rerty 555555555",
+      "id": "10"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "4",
+      "budgetArticleType": "Расходы на МНА",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите rerty 555555555",
+      "id": "11"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "4",
+      "budgetArticleType": "Расходы на МНА",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите rerty 555555555",
+      "id": "12"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "4",
+      "budgetArticleType": "Расходы на ОС",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите rerty 555555555",
+      "id": "12"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "4",
+      "budgetArticleType": "Расходы на ОС",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите rerty 555555555",
+      "id": "12"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "4",
+      "budgetArticleType": "Расходы на ЗП",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите rerty 555555555",
+      "id": "12"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "4",
+      "budgetArticleType": "Расходы на материалы",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите rerty 555555555",
+      "id": "12"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "4",
+      "budgetArticleType": "Расходы на МНА",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите rerty 555555555",
+      "id": "12"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "4",
+      "budgetArticleType": "Расходы на ОС",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите rerty 555555555",
+      "id": "12"
+    },
+    {
+      "description": "Очень необходимо два офисных стулья",
+      "count": "4",
+      "budgetArticleType": "Расходы на ЗП",
+      "issuer": "Распорядитель IT",
+      "responsiblePerson": "Хамза Хакимзаде Ния",
+      "collectionName": "№ 22м",
+      "date": "01.02.2017",
+      "issueNo": "433",
+      "state": "ОТКЛ.Распорядите rerty 555555555",
+      "id": "12"
+    }
+  ],
+  "budgetArticleType": [
+    "Расходы на ЗП",
+    "Расходы на ОС",
+    "Расходы на МНА",
+    "Расходы на материалы"
+  ],
+
+  "issuer": [
+    "Симонов Эрик Романович",
+    "Горшков Валерий Владимирович",
+    "Николаев Орест Фёдорович",
+    "Лазарев Тит Максимович",
+    "Ефимов Дан Львович",
+    "Панов Закир Фёдорович",
+    "Николаев Гавриил Борисович",
+    "Иванов Марат Максимович",
+    "Одинцов Евстахий Владимирович"
+  ],
+
+  "responsiblePerson": [
+    "Журавлёв Всеволод Александрович",
+    "Гришин Владимир Александрович",
+    "Кулагин Огюст Романович",
+    "Евдокимов Зуфар Александрович",
+    "Кузьмин Витольд Владимирович",
+    "Шубин Руслан Максимович",
+    "Воробьёв Максим Андреевич",
+    "Фролов Сава Борисович",
+    "Трофимов Жерар Владимирович",
+    "Симонов Ярослав Дмитриевич"
+  ],
+  "collectionName": [
+    "№ 22м",
+    "№ 24м"
+  ],
+  "operations": [
+    {"id": "111", "name": "сделать Свод"},
+    {"id": "222", "name": "отвязать от Свода"},
+    {"id": "333", "name": "первести в состояние"}
+  ],
+  "columntable": [
+    {"columnDef": "description", "headerName": "Описание"},
+    {"columnDef": "count", "headerName": "Количество"},
+    {"columnDef": "budgetArticleType", "headerName": "Категория статьи"},
+    {"columnDef": "issuer", "headerName": "Инициатор"},
+    {"columnDef": "responsiblePerson", "headerName": "Ответственный"},
+    {"columnDef": "collectionName", "headerName": "Свод"},
+    {"columnDef": "date", "headerName": "Дата"}
+  ],
+  "states": [
+    "Введена",
+    "Отклонена",
+    "Утверждена"
+  ]
+}

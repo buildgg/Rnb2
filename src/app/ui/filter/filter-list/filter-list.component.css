@@ -1,0 +1,35 @@
+.rnb-filter-list-wrapper {
+  width: 100%;
+}
+.rnb-filter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.rnb-filter-list li {
+  position: relative;
+  padding: 3px 25px 3px 10px;
+/*  background-color: #369AFF;*/
+/*  background-color: #93928e;*/
+  /*background-color: #0EB0E3; #52729f #6889b6 */
+ /* background-color: #0EABE3; */
+  background-color: #6889b6;
+
+  color: #FFFFFF;
+  margin-right: 10px;
+/*  border-radius: 15px;*/
+}
+.rnb-filter-item-close {
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  right: 7px;
+}
+.rnb-filter-item-close:hover {
+  opacity: 0.3;
+}

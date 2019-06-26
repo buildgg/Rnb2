@@ -1,0 +1,57 @@
+.rnb-checkbox-container {
+  display: block;
+  position: relative;
+  padding: 2px 0 10px 35px;
+ /* margin-bottom: 12px;*/
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+}
+.rnb-checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.rnb-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 21px;
+  width: 21px;
+ /* border: solid 2px #D2D2 D2;*/
+  border: solid 2px #6486ac;
+  opacity: 1;
+
+}
+/* On mouse-over, add a grey background color */
+.rnb-checkbox-container:hover input ~ .rnb-checkmark {
+  background-color: #6486ac;
+}
+
+.rnb-checkbox-container input:checked ~ .rnb-checkmark {
+  background-color: #07447a;
+  border: none;
+}
+
+.rnb-checkmark:after {
+  content: "\2714";
+  position: absolute;
+  display: none;
+  color: white;
+  left: 3.5px;
+  top: -1px;
+}
+
+.rnb-checkbox-container input:checked ~ .rnb-checkmark:after {
+  display: block;
+}
+
+/*
+border-color: #6486ac;
+ background-color: #07447a;
+*/

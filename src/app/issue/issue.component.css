@@ -1,0 +1,32 @@
+.rnb-column-text-align-center {
+  text-align: center;
+}
+.rnb-box {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.rnb-button-add {
+  position: relative;
+/*
+  background-color: #FFFFFF;
+  border: none;
+  border-bottom: 2px solid #1771cb;
+  color: #6486ac;
+  */
+  background-color: #1771cb;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  width: 120px;
+  /*font-weight: 600;*/
+  font-size: 16px;
+  margin-left: 20px;
+  padding: 10px;
+
+
+}
+.rnb-button-add:hover {
+  background-color: #175db1;
+  color: #FFFFFF;
+}

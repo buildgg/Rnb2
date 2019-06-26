@@ -1,0 +1,129 @@
+<div class="rb-mat-table mat-elevation-z1">
+  <table mat-table #table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="select">
+
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? masterToggle() : null"
+                       [checked]="selection.hasValue() && isAllSelected()"
+                       [indeterminate]="selection.hasValue() && !isAllSelected()"
+                       color="primary">
+         </mat-checkbox>
+       </th>
+
+       <td mat-cell *matCellDef="let row" >
+         <mat-checkbox (click)="$event.stopPropagation()"
+                       (change)="$event ? onSelectedChange(row, valueCheck) : null"
+                       [checked]="selection.isSelected(row)"
+                       #valueCheck
+                       color="primary"
+
+         >
+         </mat-checkbox>
+       </td>
+    </ng-container>
+
+    <ng-container *ngFor="let col of columns" matColumnDef={{col.columnDef}}>
+      <th mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          [style.width]= "col.width">
+        {{col.headerName}}</th>
+
+      <td mat-cell *matCellDef="let element"
+          [ngClass]="col.classCss"
+          [style.width]= "col.width">
+
+        {{col.datePipe ? (element[col.columnDef] | date:"dd.MM.yyyy") : element[col.columnDef]}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Операции </th>
+      <td mat-cell *matCellDef="let element">
+        <section class="icon-operation-wrapper">
+          <div class="container">
+          <ul class="icon-operations">
+            <li>
+              <div class="rnb-tooltip">
+              <a class="link-operation edit-operation"
+                 routerLink="/edit" routerLinkActive="active"></a>
+                <span class="rnb-tooltiptext">Редактировать</span>
+              </div>
+            </li>
+            <li>
+              <div class="rnb-tooltip">
+              <a class="link-operation delete-operation"></a>
+              <span class="rnb-tooltiptext">Удалить</span>
+          </div>
+            </li>
+            <li>
+              <div class="rnb-tooltip">
+              <a class="link-operation browser-operation"></a>
+                <span class="rnb-tooltiptext">Подробнее</span>
+              </div>
+            </li>
+          </ul>
+          </div>
+        </section>
+      </td>
+
+    </ng-container>
+
+    <input type="number">
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        [class.selected]="row.id === selectedRowId">
+      ></tr>
+  </table>
+</div>
+<mat-paginator #paginator
+               [pageSize]="10"
+               [pageSizeOptions]="[5, 10, 15]"
+               [showFirstLastButtons]="true">
+</mat-paginator>
+<!--   <rb-button [anchorRouterLink]=viewButton.anchorRouterLink
+                     [srcImg]=viewButton.srcImg
+                     [titleHover]=viewButton.titleHover
+                     (actionButton)="onActionButtonView(element)">
+          </rb-button>
+
+          <rb-button [anchorRouterLink]=updateButton.anchorRouterLink
+                     [srcImg]=updateButton.srcImg
+                     [titleHover]=updateButton.titleHover
+                     (actionButton)=onActionButtonUpdate(element)
+                     >
+          </rb-button>
+          <rb-button [anchorRouterLink]=deleteButton.anchorRouterLink
+                     [srcImg]=deleteButton.srcImg
+                     [titleHover]=deleteButton.titleHover
+                     (actionButton)=onActionButtonDelete(element)>
+          </rb-button>        -->
+
+<!--        пока закоментим
+
+        <rb-button [anchorRouterLink]=tableButtons.view.anchorRouterLink
+                   [srcImg]=tableButtons.view.srcImg
+                   [titleHover]= tableButtons.view.titleHover
+                   (actionButton)="onActionButtonView(element)">
+        </rb-button>
+
+        <rb-button [anchorRouterLink]= tableButtons.update.anchorRouterLink
+                   [srcImg]= tableButtons.update.srcImg
+                   [titleHover]= tableButtons.update.titleHover
+                   (actionButton)=onActionButtonUpdate(element)
+        >
+        </rb-button>
+        <rb-button [anchorRouterLink]= tableButtons.deleteRow.anchorRouterLink
+                   [srcImg]= tableButtons.deleteRow.srcImg
+                   [titleHover]= tableButtons.deleteRow.titleHover
+                   (actionButton)=onActionButtonDelete(element)>
+        </rb-button>-->
+
+
+
+<!--        <button mat-icon-button color="accent">
+          <mat-icon aria-label="Edit">edit</mat-icon>
+        </button>
+        <button mat-icon-button color="accent">
+          <mat-icon aria-label="Edit">delete</mat-icon>
+        </button>-->

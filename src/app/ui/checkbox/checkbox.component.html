@@ -1,0 +1,9 @@
+<label class="rnb-checkbox-container">{{labelCheckBox}}
+  <input type="checkbox"
+         #valueCheck
+         [checked]="checked"
+         (change)="onChange($event.target.checked)"
+         (blur)="onTouched()"
+  >
+  <span class="rnb-checkmark"></span>
+</label>

@@ -1,0 +1,97 @@
+<div class="rnb-filter">
+  <button (click)="show()" class="rnb-button-filter">Фильтровать</button>
+</div>
+
+<section class="rnb-filter-sidebar" *ngIf="visible" [@EnterLeave]="'moveIn'">
+  <div class="rnb-filter-information">
+    <div class="rnb-filter-title-wrapper">
+      <span class="rnb-filter-close" (click)="show()">&times;</span>
+      <h2 class="rnb-filter-title">Фильтровать</h2>
+    </div>
+
+    <div class="rnb-filter-param">
+      <form class="rnb-filter-form" [formGroup]="filterGroup">
+        <!--<rnb-checkbox [labelCheckBox]="'Test'" [formControl]="checkbox"></rnb-checkbox>-->
+
+        <rnb-checkbox [labelCheckBox]="'Я ответственный'"
+                      formControlName="myIssue">
+        </rnb-checkbox>
+        <rnb-checkbox [labelCheckBox]="'Заявки моего филиала'"
+                      formControlName="myBranch">
+        </rnb-checkbox>
+
+        <div class="rnb-filter-group" formGroupName="sum">
+          <div class="rnb-filter-group-title">Сумма</div>
+          <div class="rnb-group-controls">
+            <label class="min-sum">от<input name="min-sum" formControlName="sumFrom"/></label>
+            <label class="max-sum">до<input name="max-sum" formControlName="sumTill"/></label>
+          </div>
+        </div>
+
+        <div class="rnb-filter-group" formGroupName="date">
+          <div class="rnb-filter-group-title">Дата</div>
+          <div class="rnb-group-controls">
+            <label class="min-date">с
+              <input type="date"
+                     name="min-date"
+                     formControlName="dateFrom"/>
+            </label>
+            <label class="max-date">по
+              <input type="date"
+                     name="max-date"
+                     formControlName="dateTill"/>
+            </label>
+          </div>
+        </div>
+        <div class="rnb-filter-field">
+          <label> Филиал
+            <rnb-look-up
+              [lookUpArray]="sites"
+              [styleWidth]="'400px'"
+              formControlName="site"></rnb-look-up>
+          </label>
+        </div>
+        <div class="rnb-filter-field">
+          <label>
+            Тип статей
+            <rnb-look-up
+              [lookUpArray]="articleTypeArray"
+              [styleWidth]="'400px'"
+              formControlName="articleType"></rnb-look-up>
+          </label>
+        </div>
+        <div class="rnb-filter-field">
+          <label>Инициатор
+            <rnb-look-up
+              [lookUpArray]="issuer"
+              [styleWidth]="'400px'"
+              formControlName="issuer"></rnb-look-up>
+          </label>
+        </div>
+        <div class="rnb-filter-field">
+          <label>Описание
+            <input name="description"
+                   class="rnb-input-field"
+                   formControlName="description"/>
+          </label>
+        </div>
+
+        <button type="button"
+                class="rnb-button-filter rnb-button-filter-reset"
+                (click) = "reset()"
+        > Сбросить фильтр</button>
+        <button type="button"
+                class="rnb-button-filter rnb-button-filter-submit"
+                (click)="onSubmit()"
+        >Применить</button>
+      </form>
+            <p>
+              Value: {{ filterGroup.value | json }}
+            </p>
+    </div>
+  </div>
+</section>
+
+<!--[styleList]="{'width.px': 100}"
+[styleInput]="{'width.px': 100}"-->
+

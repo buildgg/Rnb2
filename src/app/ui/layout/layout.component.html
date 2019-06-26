@@ -1,0 +1,17 @@
+<rnb-header [loginUser]="loginUser"></rnb-header>
+<main class="rnb-container">
+    <section class="rnb-content">
+      <h3 class="rnb-content-title">{{title}}</h3>
+      <ng-content select="div.rnb-box"></ng-content>
+    </section>
+
+  <section class="rnb-content" *ngIf="isVisibleHiddenBox" [@EnterLeave]>
+    <ng-content select=".hide-box"></ng-content>
+  </section>
+
+    <section class="rnb-content">
+      <ng-content></ng-content>
+    </section>
+</main>
+
+

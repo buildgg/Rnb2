@@ -1,0 +1,27 @@
+<div class="rnb-dropdown-menu" [style.width]="styleWidth">
+  <div class="rnb-dropdown-input-wrapper">
+  <input type="text"
+         class="rnb-input-field"
+         (click)="open()"
+         [value]="value"
+         autocomplete="off"
+         (keyup)="onKeyUpItem($event)"
+         (blur)="onBlur($event.target.value)"
+         [style.width]="styleWidth"
+
+  >
+  </div>
+  <div class="rnb-dropdown-wrapper">
+    <ul  *ngIf="visible" class="rnb-dropdown-content" [style.width]="styleWidth">
+      <li *ngFor="let option of filterLookUp$ | async let i = index"
+         (click)="selectItemClick($event, option, +i)">
+        {{option}}
+      </li>
+    </ul>
+  </div>
+</div>
+<!--[ngStyle]="styleInput" [ngStyle]="styleList"
+[ngStyle]="styleList"  [ngStyle]="styleInput"  (keyup)="find($event.target.value)"-->
+<!--         (change)="onChange($event.target.checked)"
+ (keyup)="find($event.target.value)"
+         (blur)="onTouched()"-->
