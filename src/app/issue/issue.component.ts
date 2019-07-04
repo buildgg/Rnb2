@@ -1,6 +1,9 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+
 import {Column} from '../ui/table/rnb-table/table';
 import {FilterItem} from '../ui/filter/filter-list/filter-item';
+import {Issue} from './issue';
 
 
 const COLUMNS: Column[] = [
@@ -40,7 +43,8 @@ const ISSUES = [
     svoddate: '2017-10-12',
     description: 'Очень необходимо два офисных стулья для чень необходимо',
     justification: 'Сидеть не на чем два офисных стулья для чень необходимо',
-    budgetArticleTypesname: 'IT'
+    budgetArticleTypesname: 'IT',
+    site: '120'
   },
   {
     univid: '2',
@@ -53,7 +57,8 @@ const ISSUES = [
     svoddate: '2018-10-12',
     description: 'Очень необходимо два офисных стулья для чень необходимо',
     justification: 'Сидеть не на чем два офисных стулья для чень необходимо',
-    budgetArticleTypesname: 'ADMIN'
+    budgetArticleTypesname: 'ADMIN',
+    site: '123'
   },
   {
     univid: '3',
@@ -66,7 +71,8 @@ const ISSUES = [
     svoddate: '2018-10-12',
     description: 'Очень необходимо два офисных стулья для чень необходимо',
     justification: 'Сидеть не на чем два офисных стулья для чень необходимо',
-    budgetArticleTypesname: 'LEX'
+    budgetArticleTypesname: 'LEX',
+    site: '780'
   },
   {
     univid: '4',
@@ -79,7 +85,8 @@ const ISSUES = [
     svoddate: '2017-10-12',
     description: 'Очень необходимо два офисных стулья для чень необходимо',
     justification: 'Сидеть не на чем два офисных стулья для чень необходимо',
-    budgetArticleTypesname: 'IT'
+    budgetArticleTypesname: 'IT',
+    site: '780'
   },
   {
     univid: '5',
@@ -92,7 +99,8 @@ const ISSUES = [
     svoddate: '2017-10-12',
     description: 'Очень необходимо два офисных стулья для чень необходимо',
     justification: 'Сидеть не на чем два офисных стулья для чень необходимо',
-    budgetArticleTypesname: 'IT'
+    budgetArticleTypesname: 'IT',
+    site: '120'
   },
   {
     univid: '6',
@@ -105,7 +113,8 @@ const ISSUES = [
     svoddate: '2017-10-12',
     description: 'Очень необходимо два офисных стулья для чень необходимо',
     justification: 'Сидеть не на чем два офисных стулья для чень необходимо',
-    budgetArticleTypesname: 'IT'
+    budgetArticleTypesname: 'IT',
+    site: '120'
   },
 ];
 
@@ -122,6 +131,9 @@ export class IssueComponent {
   filterItems: string[];
   visibleHiddenBoxLayout: boolean = false;
 
+  constructor(private router: Router,
+              private route: ActivatedRoute) {}
+
   onFilterItems(filterItems: FilterItem[]) {
     this.visibleHiddenBoxLayout = true;
     this.filterItems = filterItems.map(val => {
@@ -136,16 +148,9 @@ export class IssueComponent {
     this.visibleHiddenBoxLayout = false;
   }
 
+  onEdit(issue: Issue) {
+    console.log('issue: ' , issue);
+    this.router.navigate([issue.site, issue.id, 'edit'], {relativeTo: this.route} );
+  }
 
-
-
- /* filterValue: string;*/
-
-/*  tableButtons;*/
-
-/*  onClickUpdate($event) {}
-
-  onClickDelete($event) {}
-
-  onClickView($event){}*/
 }

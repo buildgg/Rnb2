@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {IssueModule} from './issue/issue.module';
+import {Router} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,4 +19,9 @@ import {IssueModule} from './issue/issue.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(router: Router) {
+    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+  }
+}

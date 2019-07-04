@@ -13,3 +13,17 @@ body {
   background-color: rgba(153, 207, 247, 0.26);
 }
 
+.rnb-container {
+  display: flex;
+  flex-direction: column;
+  color: #547191;
+  height: 100%;
+}
+
+.rnb-content {
+  background-color: #FFFFFF;
+  margin: 10px 10px 0 10px;
+  padding: 10px;
+  box-shadow: 2px 2px 8px rgba(122, 166, 204, 0.26);
+  display: flex;
+}

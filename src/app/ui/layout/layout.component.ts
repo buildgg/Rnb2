@@ -1,5 +1,5 @@
-import {AfterContentInit, Component, ContentChild, ElementRef, Input} from '@angular/core';
-import {animate, state, style, transition, trigger} from '@angular/animations';
+import {AfterContentInit, Component, ContentChild, ContentChildren, ElementRef, Input, QueryList, TemplateRef} from '@angular/core';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'rnb-layout',
@@ -11,9 +11,12 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
     ]
   )]
 })
-export class LayoutComponent {
+export class LayoutComponent implements AfterContentInit {
   loginUser: string = 'admin';
-  title: string = 'заявки';
+  @Input() title: string = 'заявки';
   @Input() isVisibleHiddenBox: boolean = false;
+
+  ngAfterContentInit() {
+  }
 
 }

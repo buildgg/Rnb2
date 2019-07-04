@@ -1,4 +1,5 @@
 import {Component, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 const FILTER_LIST = [
   'Я - ответственный',

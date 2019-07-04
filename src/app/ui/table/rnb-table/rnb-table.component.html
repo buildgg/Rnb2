@@ -46,19 +46,21 @@
             <li>
               <div class="rnb-tooltip">
               <a class="link-operation edit-operation"
-                 routerLink="/edit" routerLinkActive="active"></a>
+                 (click)="onEdit(element)"></a>
                 <span class="rnb-tooltiptext">Редактировать</span>
               </div>
             </li>
             <li>
               <div class="rnb-tooltip">
-              <a class="link-operation delete-operation"></a>
+              <a class="link-operation delete-operation"
+                 (click)="onDelete($event)"></a>
               <span class="rnb-tooltiptext">Удалить</span>
           </div>
             </li>
             <li>
               <div class="rnb-tooltip">
-              <a class="link-operation browser-operation"></a>
+              <a class="link-operation browser-operation"
+                 (click)="onView($event)"></a>
                 <span class="rnb-tooltiptext">Подробнее</span>
               </div>
             </li>

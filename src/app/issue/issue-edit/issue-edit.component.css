@@ -1,0 +1,45 @@
+.rnb-container {
+  width: 100%;
+
+}
+.rnb-main{
+  padding: 10px;
+  margin: 1px;
+  box-shadow: 2px 2px 8px rgba(214, 215, 219, 0.8);
+/*  border-bottom: 1px solid #A9B0C0;*/
+/*background-color: #D6D7DB;*/
+}
+.rnb-heading {
+  margin-bottom: 10px;
+/*  box-shadow: 2px 2px 8px rgba(13, 43, 166, 0.37);*/
+  /*box-shadow: 1px 1px 8px #1771cb99;*/
+  /*box-shadow: 2px 2px 8px rgba(8, 133, 225, 0.26)*/
+/*  box-shadow: 1px 1px 5px #99CFF7;*/
+  box-shadow: 1px 1px 8px #559cd0;
+}
+.rnb-edit-navigation {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.rnb-edit-navigation a {
+
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 3px 20px 5px 5px;
+
+    /*#1771cb;*/
+}
+.active {
+  border-bottom: 2px solid #0f6cb6;
+  font-weight: 600;
+  display: inline-block;
+}
+
+a span:hover {
+  /*border-bottom: 2px solid #0f6cb6;*/
+  font-weight: 600;
+  display: inline-block;
+}

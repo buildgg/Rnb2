@@ -1,8 +1,9 @@
 <rnb-layout [isVisibleHiddenBox]="visibleHiddenBoxLayout">
+
   <div class="rnb-box">
     <rnb-filter (filterItems)="onFilterItems($event)"></rnb-filter>
     <rnb-operation></rnb-operation>
-    <button class="rnb-button-add">Добавить</button>
+    <button class="rnb-button-add" >Добавить</button>
   </div>
 
   <div class="hide-box" #hiddenBox *ngIf="true">
@@ -11,18 +12,19 @@
     ></rnb-filter-list>
   </div>
 
-  <rnb-table class=""
+
+  <rnb-table class=".main"
     [columns]="columns"
     [dataList]="issueList"
-    [selectedRowId]="selectedRowId">
+    [selectedRowId]="selectedRowId"
+    (edit)="onEdit($event)">
   </rnb-table>
 </rnb-layout>
-
 
 <!--    [tableButtons]="tableButtons"
  [filterValue]="filterValue"
     (clickUpdate)="onClickUpdate($event)"
     (clickDelete)="onClickDelete($event)"
     (clickView)="onClickView($event)"
-
+routerLink="/issue/edit"
 -->
