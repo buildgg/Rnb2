@@ -1,0 +1,23 @@
+<rnb-layout [title]="'редактирование заявки'">
+<div class="rnb-container">
+  <section class="rnb-main rnb-heading">
+    <ul class="rnb-edit-navigation">
+      <li><a>
+        <span routerLinkActive="active"
+              routerLink="main">Основная информация</span></a></li>
+      <li><a>
+        <span routerLinkActive="active"
+              routerLink="contracts">Данные договора</span></a></li>
+      <li><a>
+        <span routerLinkActive="active"
+                   routerLink="history">История работы</span></a></li>
+      <li><a>
+        <span routerLinkActive="active"
+                   routerLink="isma">ISMA</span></a></li>
+    </ul>
+  </section>
+  <section class="rnb-main rnb-main-section">
+    <router-outlet></router-outlet>
+  </section>
+</div>
+</rnb-layout>

@@ -1,17 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 
-import {IssueComponent} from './issue.component';
+import {IssuesComponent} from './issues.component';
 import {LayoutModule} from '../ui/layout/layout.module';
 import {TableModule} from '../ui/table/table.module';
 import {OperationModule} from '../ui/operation/operation.module';
 import {FilterModule} from '../ui/filter/filter.module';
-import { IssueEditComponent } from './issue-edit/issue-edit.component';
-import {IssueRoutingModule} from './issue-routing.module';
+import {IssuesRoutingModule} from './issues-routing.module';
 
 @NgModule({
-  declarations: [IssueComponent, IssueEditComponent],
+  declarations: [IssuesComponent],
   imports: [
     CommonModule,
     LayoutModule,
@@ -19,7 +18,7 @@ import {IssueRoutingModule} from './issue-routing.module';
     OperationModule,
     FilterModule,
     RouterModule,
-    IssueRoutingModule
+    IssuesRoutingModule
   ]
 })
-export class IssueModule { }
+export class IssuesModule { }

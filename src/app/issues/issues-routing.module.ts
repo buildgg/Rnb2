@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {IssueComponent} from './issue.component';
-import {IssueEditComponent} from './issue-edit/issue-edit.component';
+import {IssuesComponent} from './issues.component';
+
 
 const issuesRoutes: Routes = [
-  {path: 'issue', component: IssueComponent},
-  {path: 'issue/:site/:id/edit', component: IssueEditComponent},
-
+  {path: 'issue', component: IssuesComponent},
+  {path: 'issue/:site/:id/edit',
+    loadChildren: './issue-edit/issue-edit.module#IssueEditModule'}
 ];
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ const issuesRoutes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class IssueRoutingModule {
+export class IssuesRoutingModule {
 
 }
 

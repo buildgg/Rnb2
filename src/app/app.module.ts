@@ -1,10 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {Router} from '@angular/router';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {IssueModule} from './issue/issue.module';
-import {Router} from '@angular/router';
+import {IssuesModule} from './issues/issues.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    IssueModule,
+    IssuesModule,
     AppRoutingModule
 
   ],

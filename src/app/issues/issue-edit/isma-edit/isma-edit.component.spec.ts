@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IssueComponent } from './issue.component';
+import { IsmaEditComponent } from './isma-edit.component';
 
-describe('IssueComponent', () => {
-  let component: IssueComponent;
-  let fixture: ComponentFixture<IssueComponent>;
+describe('IsmaEditComponent', () => {
+  let component: IsmaEditComponent;
+  let fixture: ComponentFixture<IsmaEditComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IssueComponent ]
+      declarations: [ IsmaEditComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IssueComponent);
+    fixture = TestBed.createComponent(IsmaEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

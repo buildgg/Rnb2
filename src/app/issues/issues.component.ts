@@ -120,11 +120,11 @@ const ISSUES = [
 
 @Component({
   selector: 'rnb-issue',
-  templateUrl: './issue.component.html',
-  styleUrls: ['./issue.component.css'],
+  templateUrl: './issues.component.html',
+  styleUrls: ['./issues.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class IssueComponent {
+export class IssuesComponent {
   columns: Column[] = COLUMNS;
   issueList = ISSUES;
   selectedRowId: string = null;

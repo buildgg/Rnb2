@@ -38,8 +38,12 @@
   display: inline-block;
 }
 
-a span:hover {
-  /*border-bottom: 2px solid #0f6cb6;*/
+a span:hover,
+a span:focus,
+a span:active,
+a span:visited
+{
+  outline: none;
   font-weight: 600;
   display: inline-block;
 }
