@@ -8,13 +8,20 @@ import {MainEditComponent} from './main-edit/main-edit.component';
 import {LayoutModule} from '../../ui/layout/layout.module';
 import { HistoryEditComponent } from './history-edit/history-edit.component';
 import { IsmaEditComponent } from './isma-edit/isma-edit.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
-  declarations: [IssueEditComponent, ContractsEditComponent, MainEditComponent, HistoryEditComponent, IsmaEditComponent],
+  declarations: [
+    IssueEditComponent,
+    ContractsEditComponent,
+    MainEditComponent,
+    HistoryEditComponent,
+    IsmaEditComponent],
   imports: [
     CommonModule,
     IssueEditRoutingModule,
-    LayoutModule
+    LayoutModule,
+    ReactiveFormsModule
   ]
 })
 export class IssueEditModule { }

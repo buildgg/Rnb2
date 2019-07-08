@@ -1,0 +1,12 @@
+.rnb-container--edit-main {
+  display: flex;
+  /*width: 100%;*/
+}
+.rnb-edit-main {
+ /* border: 1px solid #6589ab;*/
+  width: 80%;
+}
+.rnb-edit-main-errors {
+  border: 1px solid #38b133;
+  width: 20%;
+}

@@ -1,3 +1,62 @@
-<p>
-  main-edit works!
-</p>
+<div class="rnb-container--edit-main">
+  <section class="rnb-edit-main">
+    <form [formGroup] = "mainForm">
+      <div class="rnb-filter-field">
+        <label> univid
+          <input class="rnb-input-field"
+                 formControlName="univid"/>
+        </label>
+      </div>
+      <div class="rnb-filter-field">
+        <label> id
+          <input class="rnb-input-field"
+                 formControlName="id"/>
+        </label>
+      </div>
+      <div class="rnb-filter-field">
+        <label> Номер заявки
+          <input class="rnb-input-field"
+                 formControlName="issueno"/>
+        </label>
+      </div>
+      <div class="rnb-filter-field">
+        <label> Бюджетная дата
+          <input class="rnb-input-field"
+                 formControlName="budgetdate"/>
+        </label>
+      </div>
+      <div class="rnb-filter-field">
+        <label> Ответственный
+          <input class="rnb-input-field"
+                 formControlName="issuer"/>
+        </label>
+      </div>
+      <div class="rnb-filter-field">
+        <label> Номер свода
+          <input class="rnb-input-field"
+                 formControlName="svodno"/>
+        </label>
+      </div>
+      <div class="rnb-filter-field">
+        <label> id
+          <input class="rnb-input-field"
+                 formControlName="id"/>
+        </label>
+      </div>
+      <div class="rnb-filter-field">
+        <label> Дата свода
+          <input class="rnb-input-field"
+                 formControlName="svoddate"/>
+        </label>
+      </div>
+      <div class="rnb-filter-field">
+        <label> Описание
+          <input class="rnb-input-field"
+                 formControlName="description"/>
+        </label>
+      </div>
+    </form>
+  </section>
+  <section class="rnb-edit-main-errors">errors
+  </section>
+</div>

@@ -47,3 +47,12 @@ a span:visited
   font-weight: 600;
   display: inline-block;
 }
+.rnb-main-section{
+  margin-bottom: 1px;
+  /*  box-shadow: 2px 2px 8px rgba(13, 43, 166, 0.37);*/
+  /*box-shadow: 1px 1px 8px #1771cb99;*/
+  /*box-shadow: 2px 2px 8px rgba(8, 133, 225, 0.26)*/
+  /*  box-shadow: 1px 1px 5px #99CFF7;*/
+ /* box-shadow: 1px 1px 8px #559cd0;*/
+  box-shadow: 1px 1px 6px #559cd0;
+}
