@@ -1,0 +1,90 @@
+<div class="rnb-grid-wrapper">
+<button class="rnb-grid--button" (click)="addRow()">Добавить</button>
+<table>
+  <thead>
+  <tr>
+    <th *ngFor="let head of headers">{{head}}</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor ="let data of dataSource">
+    <ng-container *ngTemplateOutlet="selectTemplate(data); context: {$implicit: data}">
+    </ng-container>
+  </tr>
+  <tr>
+    <ng-container *ngTemplateOutlet="addTemplate()">
+    </ng-container>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+<ng-template #tableTmp let-data>
+  <td class="rnb-grid--template-table" style="width: 320px">
+    {{data.firstcell}}
+    <div class="rnb-grid--show-edit" (click)="edit(data)"></div>
+  </td>
+  <td class="rnb-grid--template-table" style="width: 50%">
+    {{data.secondcell}}
+    <div class="rnb-grid--show-edit" (click)="edit(data)"></div>
+  </td>
+</ng-template>
+
+<ng-template #editTmp>
+  <td class="rnb-grid--template-table">
+    <input type="text"
+           class="rnb-grid--input rnb-grid--input-edit"
+           [value]="selected.firstcell"
+           #editField
+    >
+    <div class="rnb-grid--input-edit-hide-accept"
+         (click)="accept(editField.value)"
+    ></div>
+    <div class="rnb-grid--input-edit-hide-cancel"
+         (click)="cancel()"
+    ></div>
+  </td>
+
+  <td class="rnb-grid--template-table">
+    <input type="text"
+           class="rnb-grid--input rnb-grid--input-edit"
+           [value]= "selected.secondcell"
+
+    >
+    <div class="rnb-grid--input-edit-hide-accept"
+         (click)="accept(data)"
+    ></div>
+    <div class="rnb-grid--input-edit-hide-cancel"
+         (click)="cancel()"
+    ></div>
+  </td>
+</ng-template>
+
+<ng-template #addTmp>
+  <td class="rnb-grid--template-table" rnb-cell>
+    <input type="text" class="rnb-grid--input">
+    <div class="rnb-grid--input-edit-hide-accept" (click)="accept(editField.value)"></div>
+    <div class="rnb-grid--input-edit-hide-cancel"></div>
+  </td>
+  <td class="rnb-grid--template-table">
+    <input type="text" class="rnb-grid--input">
+    <div class="rnb-grid--input-edit-hide-accept"></div>
+    <div class="rnb-grid--input-edit-hide-cancel"></div>
+  </td>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

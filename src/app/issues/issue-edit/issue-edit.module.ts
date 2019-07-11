@@ -9,6 +9,7 @@ import {LayoutModule} from '../../ui/layout/layout.module';
 import { HistoryEditComponent } from './history-edit/history-edit.component';
 import { IsmaEditComponent } from './isma-edit/isma-edit.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {GridModule} from '../../ui/grid/grid.module';
 
 @NgModule({
   declarations: [
@@ -16,12 +17,14 @@ import {ReactiveFormsModule} from '@angular/forms';
     ContractsEditComponent,
     MainEditComponent,
     HistoryEditComponent,
-    IsmaEditComponent],
+    IsmaEditComponent
+  ],
   imports: [
     CommonModule,
     IssueEditRoutingModule,
     LayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GridModule
   ]
 })
 export class IssueEditModule { }

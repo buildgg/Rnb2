@@ -74,8 +74,7 @@
     <input type="number">
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-        [class.selected]="row.id === selectedRowId">
-      ></tr>
+        [class.selected]="row.id === selectedRowId"></tr>
   </table>
 </div>
 <mat-paginator #paginator

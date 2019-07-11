@@ -1,0 +1,120 @@
+.rnb-grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 80%;
+  min-width: 60px;
+}
+.rnb-grid--button {
+  width: 90px;
+  margin: 0 0 0 auto;
+  background-color: #547191;
+/*  background-color: #1771cb;*/
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px;
+}
+.rnb-grid--button:hover {
+  background-color: #78a1cb;
+  color: #FFFFFF;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid rgb(203, 214, 226);
+}
+
+th {
+  text-align: left;
+  padding: 5px;
+  /*border: 1px solid rgb(203, 214, 226);*/
+  border: 1px solid rgb(190, 201, 213);
+}
+td {
+  padding: 5px;
+  border: 1px solid rgb(190, 201, 213);
+}
+.rnb-grid--template-table {
+  position: relative;
+}
+
+.rnb-grid--show-edit{
+  position: absolute;
+  left: 0;
+  bottom:0;
+  right: 5px;
+  top:0;
+/*  left: 0;
+  bottom:0;
+  right: 5px;
+  top:0;*/
+ /* text-align: right;*/
+  display: none;
+  cursor: pointer;
+}
+.rnb-grid--show-edit:after {
+  position: absolute;
+ /* left: 0;*/
+  bottom:0;
+  right: 5px;
+  top:7px;
+  content: "";
+  width: 16px;
+  height: 16px;
+
+  background: url("../../../assets/img/grid-edit-16.png") no-repeat 0 0;
+ /* #0f6cb6*//*accept-edit16*/
+}
+
+.rnb-grid--template-table:hover .rnb-grid--show-edit,
+.rnb-grid--template-table:hover .rnb-grid--input-edit-hide-accept,
+.rnb-grid--template-table:hover .rnb-grid--input-edit-hide-cancel
+{
+  display: block;
+}
+
+.rnb-grid--input {
+  font: inherit;
+  color: #668bad;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #547191;
+  width: 100%;
+  box-sizing: border-box;
+  padding-right: 40px;
+}
+
+.rnb-grid--input-edit-hide-accept {
+  position: absolute;
+  bottom:0;
+  right: 24px;
+  top:7px;
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: none;
+  cursor: pointer;
+  opacity: 0.7;
+  background: url("../../../assets/img/grid-accept-edit-16-6.png") no-repeat 0 0;
+}
+
+.rnb-grid--input-edit-hide-cancel {
+  position: absolute;
+  bottom:0;
+  right: 5px;
+  top:7px;
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: none;
+  cursor: pointer;
+  opacity: 0.6;
+  background: url("../../../assets/img/grid-cancel-edit-16-1.png") no-repeat 0 0;
+}
+.rnb-grid--input-edit-hide-accept:hover,
+.rnb-grid--input-edit-hide-cancel:hover
+{
+  opacity: 1;
+}
