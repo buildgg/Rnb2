@@ -1,12 +1,31 @@
-import {Directive, ElementRef} from '@angular/core';
+import {Directive, ElementRef, Input, OnInit, TemplateRef, ViewContainerRef} from '@angular/core';
 
 @Directive({
-  selector: '[rnb-cell]'
+  selector: '[rnbCell]'
 })
-export class RnbCellDirective {
+export class RnbCellDirective implements OnInit {
 
-  constructor(el: ElementRef) {
-    console.log('width = ' + el.nativeElement.style.width);
+  @Input('rnbCell') images: string[];
+  ngOnInit(): void {
+    console.log('images = ', this.images);
   }
+
+  /*context;
+
+  constructor(private tpl: TemplateRef<any>,
+              private vcr: ViewContainerRef) {
+    console.log('width = ');
+  }
+
+  @Input('rnbCellFrom') images: string[];
+
+  ngOnInit(): void {
+    this.context = {
+      $implicit: this.images
+  };
+
+    this.vcr.createEmbeddedView(this.tpl, this.context);
+  }*/
+
 }
 

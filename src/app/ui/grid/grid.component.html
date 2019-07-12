@@ -3,7 +3,7 @@
 <table>
   <thead>
   <tr>
-    <th *ngFor="let head of headers">{{head}}</th>
+    <th *ngFor="let head of headers">{{head.columnTitle}}</th>
   </tr>
   </thead>
 
@@ -21,39 +21,23 @@
 </div>
 
 <ng-template #tableTmp let-data>
-  <td class="rnb-grid--template-table" style="width: 320px">
-    {{data.firstcell}}
-    <div class="rnb-grid--show-edit" (click)="edit(data)"></div>
-  </td>
-  <td class="rnb-grid--template-table" style="width: 50%">
-    {{data.secondcell}}
+  <td *ngFor="let cell of headers" class="rnb-grid--template-table" >
+    {{data[cell.column]}}
     <div class="rnb-grid--show-edit" (click)="edit(data)"></div>
   </td>
 </ng-template>
 
 <ng-template #editTmp>
-  <td class="rnb-grid--template-table">
+  <td class="rnb-grid--template-table"
+      *ngFor="let cell of headers" [formGroup]= "editGroup"
+  >
     <input type="text"
            class="rnb-grid--input rnb-grid--input-edit"
-           [value]="selected.firstcell"
-           #editField
-    >
-    <div class="rnb-grid--input-edit-hide-accept"
-         (click)="accept(editField.value)"
-    ></div>
-    <div class="rnb-grid--input-edit-hide-cancel"
-         (click)="cancel()"
-    ></div>
-  </td>
+           [value]="selected[cell.column]"
+           [formControlName]="cell.column">
 
-  <td class="rnb-grid--template-table">
-    <input type="text"
-           class="rnb-grid--input rnb-grid--input-edit"
-           [value]= "selected.secondcell"
-
-    >
     <div class="rnb-grid--input-edit-hide-accept"
-         (click)="accept(data)"
+         (click)="accept(editGroup)"
     ></div>
     <div class="rnb-grid--input-edit-hide-cancel"
          (click)="cancel()"
@@ -62,20 +46,16 @@
 </ng-template>
 
 <ng-template #addTmp>
-  <td class="rnb-grid--template-table" rnb-cell>
-    <input type="text" class="rnb-grid--input">
-    <div class="rnb-grid--input-edit-hide-accept" (click)="accept(editField.value)"></div>
-    <div class="rnb-grid--input-edit-hide-cancel"></div>
-  </td>
-  <td class="rnb-grid--template-table">
-    <input type="text" class="rnb-grid--input">
-    <div class="rnb-grid--input-edit-hide-accept"></div>
-    <div class="rnb-grid--input-edit-hide-cancel"></div>
+  <td class="rnb-grid--template-table"
+      *ngFor="let cell of headers" [formGroup]= "addGroup">
+    <input type="text"
+           class="rnb-grid--input"
+           [formControlName]="cell.column">
+
+    <div class="rnb-grid--input-edit-hide-accept" (click)="add(addGroup)"></div>
+    <div class="rnb-grid--input-edit-hide-cancel" (click)="cancel()"></div>
   </td>
 </ng-template>
-
-
-
 
 
 

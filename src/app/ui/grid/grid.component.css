@@ -38,6 +38,7 @@ td {
 }
 .rnb-grid--template-table {
   position: relative;
+
 }
 
 .rnb-grid--show-edit{
@@ -118,3 +119,7 @@ td {
 {
   opacity: 1;
 }
+/*.rnb-grid--row-wrapper {
+  display: flex;
+  width: 100%;
+}*/
