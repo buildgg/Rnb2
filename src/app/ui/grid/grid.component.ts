@@ -58,10 +58,10 @@ export class GridComponent implements OnInit {
       this.addGroup.reset();
       this.activeNow = 'add';
     }
-
   }
   addTemplate() {
-    return this.activeNow === 'add' && this.activeNow !== 'edit' ? this.addTmp : '';
+/*    return this.activeNow === 'add' && this.activeNow !== 'edit' ? this.addTmp : ''; */
+    return this.activeNow === 'add' ? this.addTmp : '';
   }
   cancel() {
     this.activeNow = 'table';
