@@ -30,7 +30,9 @@
   font-size: 16px;
   padding: 3px 20px 5px 5px;
 
-    /*#1771cb;*/
+/*  font-family: "Avenir Next W02", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+    !*#1771cb;*!*/
 }
 .active {
   border-bottom: 2px solid #0f6cb6;
