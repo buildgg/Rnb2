@@ -1,45 +1,48 @@
 <div class="rnb-grid-wrapper">
-<button class="rnb-grid--button" (click)="addRow()">Добавить</button>
 <table>
   <thead>
   <tr>
-    <th *ngFor="let head of headers">{{head.columnTitle}}</th>
+    <th *ngFor="let head of headers; last as isLast"
+        [style.width]="head.width">{{head.columnTitle}}
+      <div *ngIf="isLast" (click)="addRow()" class="rnb-grid--button-last-column"></div>
+    </th>
   </tr>
   </thead>
 
   <tbody>
-  <tr *ngFor ="let data of dataSource">
-    <ng-container *ngTemplateOutlet="selectTemplate(data); context: {$implicit: data}">
-    </ng-container>
+  <tr *ngFor ="let data of showData | async">
+    <ng-container *ngTemplateOutlet="selectTemplate(data); context: {$implicit: data}"></ng-container>
   </tr>
   <tr>
-    <ng-container *ngTemplateOutlet="addTemplate()">
-    </ng-container>
+    <ng-container *ngTemplateOutlet="addTemplate()"></ng-container>
   </tr>
   </tbody>
+  <tfoot>
+  <tr><ng-container *ngTemplateOutlet="isAddFooter();"></ng-container></tr>
+  </tfoot>
 </table>
 </div>
 
 <ng-template #tableTmp let-data>
   <td *ngFor="let cell of headers" class="rnb-grid--template-table" >
     {{data[cell.column]}}
-    <div class="rnb-grid--show-edit" (click)="edit(data)"></div>
+    <div class="rnb-grid--show-hide-edit rnb-grid--wrapper-hide-icon" (click)="edit(data)"></div>
+    <div class="rnb-grid--show-hide-del rnb-grid--wrapper-hide-icon" (click)="deleteRow(data)"></div>
   </td>
 </ng-template>
 
 <ng-template #editTmp>
   <td class="rnb-grid--template-table"
-      *ngFor="let cell of headers" [formGroup]= "editGroup"
-  >
+      *ngFor="let cell of headers" [formGroup]= "editGroup">
     <input type="text"
            class="rnb-grid--input rnb-grid--input-edit"
            [value]="selected[cell.column]"
            [formControlName]="cell.column">
 
-    <div class="rnb-grid--input-edit-hide-accept"
-         (click)="accept(editGroup)"
+    <div class="rnb-grid--input-edit-hide-accept rnb-grid--wrapper-hide-icon"
+         (click)="acceptEdit()"
     ></div>
-    <div class="rnb-grid--input-edit-hide-cancel"
+    <div class="rnb-grid--input-edit-hide-cancel rnb-grid--wrapper-hide-icon"
          (click)="cancel()"
     ></div>
   </td>
@@ -52,14 +55,20 @@
            class="rnb-grid--input"
            [formControlName]="cell.column">
 
-    <div class="rnb-grid--input-edit-hide-accept" (click)="add(addGroup)"></div>
-    <div class="rnb-grid--input-edit-hide-cancel" (click)="cancel()"></div>
+    <div class="rnb-grid--input-edit-hide-accept  rnb-grid--wrapper-hide-icon"
+         (click)="add(addGroup)"></div>
+    <div class="rnb-grid--input-edit-hide-cancel rnb-grid--wrapper-hide-icon"
+         (click)="cancel()"></div>
   </td>
 </ng-template>
 
-
-
-
+<ng-template #footerTable>
+    <td *ngFor="let cell of headers" class="rnb-grid--template-footer" >
+    <ng-container *ngIf="cell.column === footerFieldName">
+      {{footer}}
+    </ng-container>
+  </td>
+</ng-template>
 
 
 

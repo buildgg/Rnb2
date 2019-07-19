@@ -1,12 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'rnb-main-edit',
   templateUrl: './main-edit.component.html',
-  styleUrls: ['./main-edit.component.css']
+  styleUrls: ['./main-edit.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class MainEditComponent implements OnInit {
+  header: {column: string, columnTitle: string}[] = [
+    {column: 'id', columnTitle: 'id'},
+    {column: 'desc', columnTitle: 'Описание ТМЦ работ, услуг'},
+    {column: 'scale', columnTitle: 'измерение'},
+    {column: 'count', columnTitle: 'количество'},
+    {column: 'price', columnTitle: 'цена'},
+    {column: 'aproc', columnTitle: 'Приблизительная сумма'},
+
+  ];
+
   mainForm: FormGroup;
 
   constructor(private fb: FormBuilder) { }
@@ -18,13 +29,19 @@ export class MainEditComponent implements OnInit {
       issueno: '',
       budgetdate: '',
       issuer: '',
-      svodno: '',
+      svodid: '',
       currolename: '',
       svoddate: '',
+      svodname: '',
       description: '',
       justification: '',
-      budgetArticleTypesname: '',
-      site: ''
+      budgetArticleType: '',
+      budgetArticle: '',
+      responsiblecenter: '',
+      issueState: '',
+      site: '',
+      summa: '',
+      excessSumma: ''
     });
   }
 

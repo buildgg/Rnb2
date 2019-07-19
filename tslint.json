@@ -60,6 +60,21 @@
       true,
       "single"
     ],
+    "variable-name": {
+      "description": "Checks variable names for various errors",
+      "oneOf": [
+        {"$ref": "#/definitions/switchedOff"},
+        {"type": "array",
+          "items": {
+            "type": ["boolean", "string"],
+            "enum": [true, "check-format",
+              "allow-leading-underscore",
+              "allow-trailing-underscore",
+              "allow-pascal-case",
+              "ban-keywords"]
+          }}
+      ]
+    },
     "trailing-comma": false,
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,

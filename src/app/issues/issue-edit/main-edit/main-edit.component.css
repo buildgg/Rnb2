@@ -1,12 +1,72 @@
-.rnb-container--edit-main {
+.rnb-container-edit--main {
   display: flex;
-  /*width: 100%;*/
+  width: 100%;
+
 }
-.rnb-edit-main {
- /* border: 1px solid #6589ab;*/
+.rnb-edit--main-field {
   width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
 }
-.rnb-edit-main-errors {
+.rnb-edit--main-column-first,
+.rnb-edit--main-column-second
+{
+  display: flex;
+  width: 49%;
+  flex-wrap: wrap;
+}
+.rnb-edit--main-column-first {
+  background-color: #e7e7e7;
+  padding: 5px;
+}
+.rnb-edit--main-column-second {
+  background-color: #b0b0b0;
+  padding: 5px;
+}
+
+.rnb-edit--main-errors {
   border: 1px solid #38b133;
   width: 20%;
+}
+
+
+
+.rnb-edit--field-wrapper {
+  margin: 0 10px 5px 0;
+}
+.rnb-edit--field-wrapper label {
+  font-weight: 600;
+}
+
+.rnb-edit--field-input
+{
+  display: block;
+  border: 1px solid #ced4da;
+  color: inherit;
+  box-sizing: border-box;
+  padding: 5px 3px 5px 5px;
+  line-height: 25px;
+}
+
+.rnb-edit--field-input-date {
+  display: block;
+  border: 1px solid #ced4da;
+  color: inherit;
+  box-sizing: border-box;
+  padding: 5px 3px 5px 5px;
+  line-height: 24px;
+}
+
+.rnb-edit--field-input-lookup {
+  box-shadow: none !important;
+  border: 1px solid #ced4da !important;
+  padding: 5px 3px 5px 5px !important;
+}
+.rnb-edit--field-wrapper textarea {
+  resize: none;
+}
+rnb-grid {
+  width: 90%;
 }

@@ -17,6 +17,8 @@ export class LookUpComponent implements AfterViewChecked, OnDestroy, OnInit,  Co
 
   @Input() lookUpArray: string[];
   @Input() styleWidth = '380px';
+  @Input() cssClassInput;
+
 
   value: string = '';
   visible: boolean = false;

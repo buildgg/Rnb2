@@ -1,4 +1,4 @@
-.rnb-dropdown-menu {
+ .rnb-dropdown-menu {
   width: 400px;
 }
 
@@ -23,7 +23,7 @@
   position: absolute;
   width: 15px;
   height: 15px;
-  top: 12px;
+  top: 13px;
   right: 5px;
   transform: rotate(90deg);
   font-size: 18px;

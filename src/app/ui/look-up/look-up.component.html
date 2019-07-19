@@ -8,6 +8,7 @@
          (keyup)="onKeyUpItem($event)"
          (blur)="onBlur($event.target.value)"
          [style.width]="styleWidth"
+         [ngClass] = "cssClassInput"
 
   >
   </div>
@@ -24,4 +25,9 @@
 [ngStyle]="styleList"  [ngStyle]="styleInput"  (keyup)="find($event.target.value)"-->
 <!--         (change)="onChange($event.target.checked)"
  (keyup)="find($event.target.value)"
-         (blur)="onTouched()"-->
+         (blur)="onTouched()"
+         [ngClass]="cssClassForInput"
+            <!--      [ngStyle]="style"
+class="rnb-input-field"
+
+            -->

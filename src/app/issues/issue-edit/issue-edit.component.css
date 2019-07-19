@@ -1,4 +1,4 @@
-.rnb-container {
+.rnb-container-column {
   width: 100%;
 
 }
@@ -10,6 +10,8 @@
 /*background-color: #D6D7DB;*/
 }
 .rnb-heading {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 10px;
 /*  box-shadow: 2px 2px 8px rgba(13, 43, 166, 0.37);*/
   /*box-shadow: 1px 1px 8px #1771cb99;*/
@@ -17,7 +19,9 @@
 /*  box-shadow: 1px 1px 5px #99CFF7;*/
   box-shadow: 1px 1px 8px #559cd0;
 }
-.rnb-edit-navigation {
+.rnb-edit-navigation,
+.rnb-edit--heading-button
+{
   margin: 0;
   padding: 0;
   list-style: none;
@@ -29,6 +33,7 @@
   cursor: pointer;
   font-size: 16px;
   padding: 3px 20px 5px 5px;
+  vertical-align: middle;
 
 /*  font-family: "Avenir Next W02", Helvetica, Arial, sans-serif;
   font-weight: 400;

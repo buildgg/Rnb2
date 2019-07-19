@@ -10,6 +10,7 @@ import { HistoryEditComponent } from './history-edit/history-edit.component';
 import { IsmaEditComponent } from './isma-edit/isma-edit.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {GridModule} from '../../ui/grid/grid.module';
+import {LookUpModule} from '../../ui/look-up/look-up.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {GridModule} from '../../ui/grid/grid.module';
     IssueEditRoutingModule,
     LayoutModule,
     ReactiveFormsModule,
-    GridModule
+    GridModule,
+    LookUpModule
   ]
 })
 export class IssueEditModule { }

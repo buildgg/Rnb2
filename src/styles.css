@@ -13,7 +13,7 @@ body {
   background-color: rgba(153, 207, 247, 0.26);
 }
 
-.rnb-container {
+.rnb-container-column {
   display: flex;
   flex-direction: column;
   color: #547191;
@@ -26,4 +26,60 @@ body {
   padding: 10px;
   box-shadow: 2px 2px 8px rgba(122, 166, 204, 0.26);
   display: flex;
+}
+.rnb-button,
+.rnb-button-cancel
+{
+  position: relative;
+  background-color: #1771cb;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  width: 120px;
+  font-size: 16px;
+  margin-left: 20px;
+  padding: 10px;
+}
+.rnb-button:hover{
+  background-color: #175db1;
+  color: #FFFFFF;
+}
+.rnb-button-cancel {
+  background-color: rgba(144, 192, 238, 0.65);
+}
+.rnb-button-cancel:hover {
+  background-color: rgba(102, 138, 170, 0.66);
+}
+
+.rnb-column-size-100 {
+  width: 100%;
+  flex-grow: 1;
+}
+.rnb-column-size-90 {
+  width: 90%;
+  flex-grow: 1;
+}
+.rnb-column-size-50 {
+  width: 50%;
+  flex-grow: 1;
+}
+.rnb-column-size-45 {
+  width: 45%;
+  flex-grow: 1;
+}
+.rnb-column-size-40 {
+  width: 40%;
+  flex-grow: 1;
+}
+.rnb-column-size-30 {
+  width: 30%;
+  flex-grow: 1;
+}
+.rnb-column-size-20 {
+  width: 20%;
+  flex-grow: 1;
+}
+.rnb-column-size-10 {
+  width: 10%;
+  flex-grow: 1;
 }
