@@ -1,24 +1,51 @@
  .rnb-dropdown-menu {
-  width: 400px;
+/*  width: 100%;*/
 }
 
 .rnb-dropdown-input-wrapper {
   position: relative;
+
 }
 
 .rnb-input-field {
   box-sizing: border-box;
-  width: 400px;
-  position: relative;
   font-size: 16px;
+  display: block;
   padding: 5px;
   border: none;
   box-shadow: 0 0 4px rgba(28, 116, 220, 0.58);
   color: inherit;
   line-height: 25px;
-}
+  position: relative;
+  width: 100%;
 
-.rnb-dropdown-input-wrapper::after {
+/*  background: url(../../../assets/img/grid-edit-16.png) no-repeat scroll 7px 7px;
+  padding-right: 30px;*/
+}
+ .rnb-dropdown-input-wrapper::after{
+   content: "\276F";
+   position: absolute;
+   width: 15px;
+   height: 15px;
+   top: 13px;
+   right: 5px;
+   transform: rotate(90deg);
+   font-size: 18px;
+   color: rgba(28, 116, 220, 0.58);
+ }
+/* .rnb-input-field::after {
+   content: "\276F";
+   position: absolute;
+   width: 15px;
+   height: 15px;
+   top: 13px;
+   right: 5px;
+   transform: rotate(90deg);
+   font-size: 18px;
+   color: rgba(28, 116, 220, 0.58);
+ }*/
+
+/*.rnb-dropdown-input-wrapper::after {
   content: "\276F";
   position: absolute;
   width: 15px;
@@ -28,11 +55,10 @@
   transform: rotate(90deg);
   font-size: 18px;
   color: rgba(28, 116, 220, 0.58);
-
-}
+}*/
 
 .rnb-dropdown-content {
-  width: 400px;
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;

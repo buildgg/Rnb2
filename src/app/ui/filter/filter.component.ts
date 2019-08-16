@@ -4,7 +4,14 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {filterMapping} from './filter-mapping';
 import {FilterItem} from './filter-list/filter-item';
 
-const SITES: string[] = ['Филиал 10', 'Branch 12', 'Филия 3', 'Site 54', 'Филиал 4', 'Филиал 67', 'Site 48'];
+const SITES: string[] = [
+  '1 - Филиал 10',
+  '2 - Branch 12',
+  '3 - Филия 3',
+  '4 - Site 54',
+  '5 - Филиал 4',
+  '6 - Филиал 67',
+  '7 - Site 48'];
 
 const ARTICLE_TYPE: string[] = ['Заработная плата ', 'Основные средства', 'МНА', 'Материалы'];
 

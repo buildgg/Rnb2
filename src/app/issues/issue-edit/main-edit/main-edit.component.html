@@ -1,72 +1,32 @@
 <div class="rnb-container-edit--main">
-  <form [formGroup] = "mainForm" class="rnb-edit--main-field">
-    <div class="rnb-edit--main-column-first">
-      <p>Ntst</p>
-      <div class="rnb-edit--field-wrapper">
+  <form [formGroup]="mainForm" class="rnb-edit--main-field">
+    <section class="rnb-edit--main-column-first">
+
+      <div class="rnb-edit--main-column-title">Параметры заявки</div>
+
+      <div class="rnb-edit--field-wrapper rnb-column-size-45 ">
         <label> univid
-          <input class="rnb-edit--field-input"
+          <input class="rnb-edit--field-input rnb-column-size-100"
                  formControlName="univid"/>
         </label>
       </div>
-      <div class="rnb-edit--field-wrapper">
+      <div class="rnb-edit--field-wrapper rnb-column-size-45">
         <label> id
-          <input class="rnb-edit--field-input"
+          <input class="rnb-edit--field-input rnb-column-size-100"
                  formControlName="id"/>
         </label>
       </div>
-      <div class="rnb-edit--field-wrapper">
-        <label> Бюджетная дата
-          <input type="date"
-            class="rnb-edit--field-input-date"
-            formControlName="budgetdate"/>
+
+      <div class="rnb-edit--field-wrapper rnb-column-size-92">
+        <label> Состояние заявки
+          <rnb-look-up
+            [lookUpArray]="issueState"
+            [cssClassInput]="'rnb-edit--field-input-lookup'"
+            formControlName="issueState">
+          </rnb-look-up>
         </label>
       </div>
-       <div class="rnb-edit--field-wrapper">
-         <label> Сумма
-           <input class="rnb-edit--field-input"
-                  formControlName="summa"/>
-         </label>
-       </div>
-       <div class="rnb-edit--field-wrapper">
-         <label> Превышение суммы
-           <input class="rnb-edit--field-input"
-                  formControlName="excessSumma"/>
-         </label>
-       </div>
-       <div class="rnb-edit--field-wrapper">
-       <label> Состояние заявки
-         <rnb-look-up
-           [lookUpArray]="issueState"
-
-           [cssClassInput]="'rnb-edit--field-input-lookup'"
-           formControlName="issueState">
-         </rnb-look-up>
-       </label>
-     </div>
-       <div class="rnb-edit--field-wrapper">
-         <label> Тип статьи бюджета
-           <rnb-look-up
-             [lookUpArray]="budgetArticleType"
-
-             [cssClassInput]="'rnb-edit--field-input-lookup'"
-             formControlName="budgetArticleType">
-           </rnb-look-up>
-         </label>
-       </div>
-       <div class="rnb-edit--field-wrapper">
-         <label> Статья бюджета
-           <rnb-look-up
-             [lookUpArray]="budgetArticle"
-
-             [cssClassInput]="'rnb-edit--field-input-lookup'"
-             formControlName="budgetArticle">
-           </rnb-look-up>
-         </label>
-       </div>
-     </div>
-
-      <div class="rnb-edit--main-column-second">
-      <div class="rnb-edit--field-wrapper">
+      <div class="rnb-edit--field-wrapper rnb-column-size-92">
         <label> Инициатор заявки
           <rnb-look-up
             [lookUpArray]="issuer"
@@ -76,69 +36,131 @@
           </rnb-look-up>
         </label>
       </div>
-        <div class="rnb-edit--field-wrapper">
-          <label> Ответственный
-            <rnb-look-up
-              [lookUpArray]="currolename"
+      <div class="rnb-edit--field-wrapper rnb-column-size-92">
+        <label> Ответственный
+          <rnb-look-up
+            [lookUpArray]="currolename"
 
-              [cssClassInput]="'rnb-edit--field-input-lookup'"
-              formControlName="currolename">
-            </rnb-look-up>
-          </label>
-        </div>
-        <div class="rnb-edit--field-wrapper">
-          <label> Центр ответственности
-            <rnb-look-up
-              [lookUpArray]="responsiblecenter"
-              [styleWidth]="'400px'"
-              [cssClassInput]="'rnb-edit--field-input-lookup'"
-              formControlName="responsiblecenter">
-            </rnb-look-up>
-          </label>
-        </div>
-        <div class="rnb-edit--field-wrapper">
-          <label> Наименование свода
-            <input class="rnb-edit--field-input"
-                   formControlName="svodname"/>
-          </label>
-        </div>
-        <div class="rnb-edit--field-wrapper">
-          <label> Id свода
-            <input class="rnb-edit--field-input"
-                   formControlName="svodid"/>
-          </label>
-        </div>
-        <div class="rnb-edit--field-wrapper">
-          <label> Дата свода
-            <input type="date"
-                   class="rnb-edit--field-input-date"
-                   formControlName="svoddate"/>
-          </label>
-        </div>
+            [cssClassInput]="'rnb-edit--field-input-lookup'"
+            formControlName="currolename">
+          </rnb-look-up>
+        </label>
+      </div>
+      <div class="rnb-edit--field-wrapper rnb-column-size-92">
+        <label> Центр ответственности
+          <rnb-look-up
+            [lookUpArray]="responsiblecenter"
+            [cssClassInput]="'rnb-edit--field-input-lookup'"
+            formControlName="responsiblecenter">
+          </rnb-look-up>
+        </label>
+      </div>
+      <div class="rnb-edit--field-wrapper rnb-column-size-45">
+        <label> Id свода
+          <input disabled class="rnb-edit--field-input rnb-column-size-100"
+                 formControlName="svodid"/>
+        </label>
+      </div>
+      <div class="rnb-edit--field-wrapper rnb-column-size-45">
+        <label> Дата свода
+          <input disabled type="date"
+                 class="rnb-edit--field-input-date rnb-column-size-100"
+                 formControlName="svoddate"/>
+        </label>
+      </div>
+      <div class="rnb-edit--field-wrapper rnb-column-size-92">
+        <label> Наименование свода
+          <input disabled class="rnb-edit--field-input rnb-column-size-100"
+                 formControlName="svodname"/>
+        </label>
       </div>
       <div class="rnb-edit--field-wrapper">
+        <label> Описание заявки
+          <textarea class="rnb-edit--field-input"
+                    row="2"
+                    formControlName="description"
+                    cols="100%">
+      </textarea>
+        </label>
+      </div>
+      <div class="rnb-edit--field-wrapper">
+        <label> Обоснование заявки
+          <textarea class="rnb-edit--field-input"
+                    row="2"
+                    formControlName="description"
+                    cols="150%"
+          >
+      </textarea>
+        </label>
+      </div>
+    </section>
+
+    <section class="rnb-edit--main-column-second  rnb-column-size-45">
+      <div class="rnb-edit--main-column-title">Параметры бюджета</div>
+      <div class="rnb-edit--field-wrapper rnb-column-size-100">
+        <label> Бюджетная дата
+          <input type="date"
+                 class="rnb-edit--field-input-date"
+                 formControlName="budgetdate"/>
+        </label>
+      </div>
+      <div class="rnb-edit--field-wrapper rnb-column-size-60">
+        <label> Сумма
+          <input class="rnb-edit--field-input rnb-column-size-100"
+                 formControlName="summa"/>
+        </label>
+      </div>
+      <div class="rnb-edit--field-wrapper rnb-column-size-60">
+        <label> Превышение суммы
+          <input class="rnb-edit--field-input rnb-column-size-100"
+                 formControlName="excessSumma" />
+        </label>
+      </div>
+      <div class="rnb-edit--field-wrapper rnb-column-size-92">
+        <label> Тип статьи бюджета
+          <rnb-look-up
+            [lookUpArray]="budgetArticleType"
+
+            [cssClassInput]="'rnb-edit--field-input-lookup'"
+            formControlName="budgetArticleType">
+          </rnb-look-up>
+        </label>
+      </div>
+      <div class="rnb-edit--field-wrapper rnb-column-size-92">
+        <label> Статья бюджета
+          <rnb-look-up
+            [lookUpArray]="budgetArticle"
+
+            [cssClassInput]="'rnb-edit--field-input-lookup'"
+            formControlName="budgetArticle">
+          </rnb-look-up>
+        </label>
+      </div>
+
+    </section>
+    <div class="rnb-edit--field-wrapper">
       <label> Описание заявки
-      <textarea class="rnb-edit--field-input"
-                row="2"
-                formControlName="description"
-                cols="100%">
+        <textarea class="rnb-edit--field-input"
+                  row="2"
+                  formControlName="description"
+                  cols="100%">
       </textarea>
       </label>
-      </div>
-      <div class="rnb-edit--field-wrapper">
+    </div>
+    <div class="rnb-edit--field-wrapper">
       <label> Обоснование заявки
-      <textarea class="rnb-edit--field-input"
-                row="2"
-                formControlName="description"
-                cols="150%"
-      >
+        <textarea class="rnb-edit--field-input"
+                  row="2"
+                  formControlName="description"
+                  cols="150%"
+        >
       </textarea>
       </label>
-      </div>
-      <rnb-grid [headers]="header"></rnb-grid>
-    </form>
+    </div>
+    <rnb-grid [headers]="header"></rnb-grid>
+  </form>
 
-  <section class="rnb-edit--main-errors">
+<!--  <section class="rnb-edit&#45;&#45;main-errors">
     errors
-  </section>
+  </section>-->
 </div>

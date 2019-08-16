@@ -16,7 +16,7 @@ import {distinctUntilChanged, map, startWith} from 'rxjs/operators';
 export class LookUpComponent implements AfterViewChecked, OnDestroy, OnInit,  ControlValueAccessor {
 
   @Input() lookUpArray: string[];
-  @Input() styleWidth = '380px';
+  @Input() styleWidth;
   @Input() cssClassInput;
 
 

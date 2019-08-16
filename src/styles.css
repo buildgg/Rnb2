@@ -53,33 +53,31 @@ body {
 
 .rnb-column-size-100 {
   width: 100%;
-  flex-grow: 1;
+}
+.rnb-column-size-92 {
+  width: 92%;
 }
 .rnb-column-size-90 {
   width: 90%;
-  flex-grow: 1;
+}
+.rnb-column-size-60 {
+  width: 60%;
 }
 .rnb-column-size-50 {
   width: 50%;
-  flex-grow: 1;
 }
 .rnb-column-size-45 {
   width: 45%;
-  flex-grow: 1;
 }
 .rnb-column-size-40 {
   width: 40%;
-  flex-grow: 1;
 }
 .rnb-column-size-30 {
   width: 30%;
-  flex-grow: 1;
 }
 .rnb-column-size-20 {
   width: 20%;
-  flex-grow: 1;
 }
 .rnb-column-size-10 {
   width: 10%;
-  flex-grow: 1;
 }

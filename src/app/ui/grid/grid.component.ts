@@ -6,13 +6,14 @@ import { BehaviorSubject, Subscription } from 'rxjs';
 const HEADERS = [
   {column: 'id', columnTitle: 'Id First', width: '30%'},
   {column: 'name', columnTitle: 'name Second',  width: '50%'},
-  {column: 'price', columnTitle: 'цена',  width: '20%'},
+  {column: 'gague', columnTitle: 'мера',  width: '10%'},
+  {column: 'price', columnTitle: 'цена',  width: '10%'}
 
 ];
 const DATA = [
-  {id: 'Hi, Im your first cell', name: 'I\'m your second cell.', price: '12.45'},
-  {id: '2 Hi, Im your first cell', name: ' 2 I\'m your second cell.', price: '45.90'},
-  {id: '3 Hi, Im your first cell', name: ' 3 I\'m your second cell.', price: '15.01'}
+  {id: 'Hi, Im your first cell', name: 'I\'m your second cell.', gague: 'шт.', price: '12.45'},
+  {id: '2 Hi, Im your first cell', name: ' 2 I\'m your second cell.', gague: 'шт.', price: '45.90'},
+  {id: '3 Hi, Im your first cell', name: ' 3 I\'m your second cell.', gague: 'шт.', price: '15.01'}
 ];
 
 @Component({
@@ -25,7 +26,8 @@ export class GridComponent implements OnInit, OnDestroy {
   @Input() dataSource = DATA;
   @Input() footerFieldName: string = 'price';
 
-  showData = new BehaviorSubject();
+
+  showData = new BehaviorSubject<any>(null);
   footerData: Subscription;
   selected;
   footer: number;

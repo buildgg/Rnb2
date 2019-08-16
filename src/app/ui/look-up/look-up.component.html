@@ -8,9 +8,7 @@
          (keyup)="onKeyUpItem($event)"
          (blur)="onBlur($event.target.value)"
          [style.width]="styleWidth"
-         [ngClass] = "cssClassInput"
-
-  >
+         [ngClass] = "cssClassInput">
   </div>
   <div class="rnb-dropdown-wrapper">
     <ul  *ngIf="visible" class="rnb-dropdown-content" [style.width]="styleWidth">

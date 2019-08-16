@@ -1,6 +1,7 @@
 .rnb-container-edit--main {
   display: flex;
   width: 100%;
+  justify-content: space-between;
 
 }
 .rnb-edit--main-field {
@@ -10,20 +11,35 @@
   justify-content: space-between;
 
 }
+/*  #eaf4ff*/
 .rnb-edit--main-column-first,
 .rnb-edit--main-column-second
 {
   display: flex;
-  width: 49%;
+  width: 47%;
   flex-wrap: wrap;
 }
 .rnb-edit--main-column-first {
-  background-color: #e7e7e7;
-  padding: 5px;
+  background-color: #eaf4ff;
+  padding: 10px;
+  box-shadow: 0 0px 5px 1px #8e8e8e;
 }
+.rnb-edit--main-column-title {
+  width: 100%;
+  font-size: 22px;
+  /* text-transform: lowercase; */
+  padding: 10px 0 10px 10px;
+  background-color: #1771cb;
+  color: #FFFFFF;
+  margin-bottom: 5px;
+  height: 24px;
+
+}
+
 .rnb-edit--main-column-second {
-  background-color: #b0b0b0;
-  padding: 5px;
+  background-color: #eaf4ff;
+  padding: 10px;
+  box-shadow: 0 0px 5px 1px #8e8e8e;
 }
 
 .rnb-edit--main-errors {
@@ -31,15 +47,15 @@
   width: 20%;
 }
 
-
-
 .rnb-edit--field-wrapper {
   margin: 0 10px 5px 0;
 }
 .rnb-edit--field-wrapper label {
   font-weight: 600;
 }
-
+.rnb-edit--field-input-sum {
+  width: 100%;
+}
 .rnb-edit--field-input
 {
   display: block;
@@ -63,6 +79,7 @@
   box-shadow: none !important;
   border: 1px solid #ced4da !important;
   padding: 5px 3px 5px 5px !important;
+/*  width: 500px !important;*/
 }
 .rnb-edit--field-wrapper textarea {
   resize: none;
