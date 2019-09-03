@@ -1,0 +1,38 @@
+.rnb-login {
+  background-color: #FFFFFF;
+  width: 300px;
+  top: 150px;
+  margin: 0 auto;
+  margin-top: 150px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  color: #547191;
+  box-shadow: 0 0px 5px 1px #c9d6e1;
+
+}
+.rnb-login--header {
+  height: 70px;
+  background-color: #0a335c;
+  background-image: linear-gradient(to right, #0a335c 10%, #086ab9);
+}
+
+.rnb-login--input
+{
+  display: block;
+  border: 1px solid #ced4da;
+  color: inherit;
+  box-sizing: border-box;
+  padding: 5px 3px 5px 5px;
+  line-height: 25px;
+  width: 100%;
+  font-size: 16px;
+}
+.rnb-button {
+  width: 100%;
+  margin: 0;
+  margin-top: 10px;
+}
+.rnb-login--input-wrapper {
+  margin-bottom: 10px;
+}

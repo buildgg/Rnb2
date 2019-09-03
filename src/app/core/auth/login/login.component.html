@@ -1,0 +1,20 @@
+<div class="rnb-login--header">
+  <img src="../../../../assets/img/rnb-logo.png">
+</div>
+<section class="rnb-login" [formGroup] = loginForm>
+  <div class="rnb-login--input-wrapper">
+    <label> Пользователь
+      <input class="rnb-login--input"
+             formControlName="user"/>
+    </label>
+  </div>
+  <div class="rnb-login--input-wrapper">
+    <label> Пароль
+      <input class="rnb-login--input"
+             type="password"
+             formControlName="password"/>
+    </label>
+  </div>
+  <button class="rnb-button" (click)="login()">Войти</button>
+</section>
+<rnb-modal-message></rnb-modal-message>

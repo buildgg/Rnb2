@@ -1,5 +1,6 @@
-import {AfterContentInit, Component, ContentChild, ContentChildren, ElementRef, Input, QueryList, TemplateRef} from '@angular/core';
+import {AfterContentInit, Component, ContentChild, ContentChildren, ElementRef, Input, OnInit, QueryList, TemplateRef} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
+import {AuthService} from '../../core/auth/auth.service';
 
 @Component({
   selector: 'rnb-layout',
@@ -11,12 +12,15 @@ import {animate, style, transition, trigger} from '@angular/animations';
     ]
   )]
 })
-export class LayoutComponent implements AfterContentInit {
-  loginUser: string = 'admin';
+export class LayoutComponent implements OnInit {
+  loginUser: string;
   @Input() title: string = 'заявки';
   @Input() isVisibleHiddenBox: boolean = false;
 
-  ngAfterContentInit() {
+  ngOnInit() {
+    this.loginUser = this.authService.currentUser;
   }
+
+  constructor(private authService: AuthService) {}
 
 }

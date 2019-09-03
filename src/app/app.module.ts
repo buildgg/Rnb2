@@ -1,10 +1,13 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {Router} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {IssuesModule} from './issues/issues.module';
+import {AuthModule} from './core/auth/auth.module';
+import {ModalMessageModule} from './ui/modal-message/modal-message.module';
 
 @NgModule({
   declarations: [
@@ -12,8 +15,10 @@ import {IssuesModule} from './issues/issues.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IssuesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule
 
   ],
   providers: [],

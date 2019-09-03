@@ -1,0 +1,10 @@
+<div class="rnb-modal--background" *ngIf="visible"></div>
+<section *ngIf="visible" class="rnb-modal">
+  <div class="rnb-modal--title">
+    <span>Ошибка</span>
+  </div>
+  <div class="rnb-modal--wrapper">
+  <div class="rnb-modal--message">{{message}}</div>
+  <button class="rnb-modal--close" (click) = "close()">Закрыть</button>
+  </div>
+</section>
