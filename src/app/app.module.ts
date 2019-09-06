@@ -7,8 +7,8 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {IssuesModule} from './issues/issues.module';
 import {AuthModule} from './core/auth/auth.module';
-import {ModalMessageModule} from './ui/modal-message/modal-message.module';
 import {ModalModule} from './ui/modal/modal.module';
+import {httpInterceptorProviders} from './core/http-interceptors/index';
 
 
 @NgModule({
@@ -24,12 +24,12 @@ import {ModalModule} from './ui/modal/modal.module';
     ModalModule
 
   ],
-  providers: [],
+  providers: [ httpInterceptorProviders ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 
   constructor(router: Router) {
-    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+ /*   console.log('Routes: ', JSON.stringify(router.config, undefined, 2));*/
   }
 }

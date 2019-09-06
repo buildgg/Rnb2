@@ -25,7 +25,6 @@ export class ModalService {
 
     const { nativeElement } = componentRef.location;
     this.document.body.appendChild(nativeElement);
-
   }
 
   resolveNgContent<T>(content: Content<T>) {

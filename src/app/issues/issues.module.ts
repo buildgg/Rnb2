@@ -8,6 +8,7 @@ import {TableModule} from '../ui/table/table.module';
 import {OperationModule} from '../ui/operation/operation.module';
 import {FilterModule} from '../ui/filter/filter.module';
 import {IssuesRoutingModule} from './issues-routing.module';
+import {SpinnerModule} from '../ui/spinner/spinner.module';
 
 @NgModule({
   declarations: [IssuesComponent],
@@ -18,7 +19,8 @@ import {IssuesRoutingModule} from './issues-routing.module';
     OperationModule,
     FilterModule,
     RouterModule,
-    IssuesRoutingModule
+    IssuesRoutingModule,
+    SpinnerModule
   ]
 })
 export class IssuesModule { }
