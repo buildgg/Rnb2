@@ -8,6 +8,8 @@ import {AppComponent} from './app.component';
 import {IssuesModule} from './issues/issues.module';
 import {AuthModule} from './core/auth/auth.module';
 import {ModalMessageModule} from './ui/modal-message/modal-message.module';
+import {ModalModule} from './ui/modal/modal.module';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import {ModalMessageModule} from './ui/modal-message/modal-message.module';
     HttpClientModule,
     IssuesModule,
     AppRoutingModule,
-    AuthModule
+    AuthModule,
+    ModalModule
 
   ],
   providers: [],

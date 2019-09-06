@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Column} from '../ui/table/rnb-table/table';
 import {FilterItem} from '../ui/filter/filter-list/filter-item';
 import {Issue} from './issue';
+import {ModalService} from '../ui/modal/modal.service';
 
 
 const COLUMNS: Column[] = [
@@ -132,7 +133,8 @@ export class IssuesComponent {
   visibleHiddenBoxLayout: boolean = false;
 
   constructor(private router: Router,
-              private route: ActivatedRoute) {}
+              private route: ActivatedRoute,
+              private modal: ModalService) {}
 
   onFilterItems(filterItems: FilterItem[]) {
     this.visibleHiddenBoxLayout = true;

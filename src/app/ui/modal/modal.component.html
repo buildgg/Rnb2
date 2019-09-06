@@ -1,0 +1,18 @@
+<div class="rnb-modal--background"></div>
+<section class="rnb-modal">
+  <div class="rnb-modal--title">
+    <span>Ошибка</span>
+  </div>
+  <div class="rnb-modal--wrapper">
+    <div class="rnb-modal--message">
+      <ng-content></ng-content>
+      <ng-container #container></ng-container>
+
+    </div>
+    <button class="rnb-modal--close" (click) = "close()">Закрыть</button>
+  </div>
+</section>
+
+<ng-template #templateName let-vName="name">
+  Hi I'm NG Template! {{vName}}
+</ng-template>
