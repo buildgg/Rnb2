@@ -19,7 +19,6 @@ export class SpinnerService {
     this.componentRef = factory.create(this.injector);
 
     this.element =  this.componentRef.location.nativeElement;
-    console.log(typeof this.element)
     this.document.body.appendChild(this.element);
    }
   destroy() {

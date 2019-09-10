@@ -35,7 +35,6 @@ export class LoginComponent implements OnInit {
       .subscribe((val) => {
           if (val) {
             this.authService.currentUser = this.loginForm.value.user;
-            this.authService.authorized = true;
             this.router.navigate([this.authService.redirectUrl]);
           }
         },

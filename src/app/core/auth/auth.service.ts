@@ -1,12 +1,17 @@
-import {Injectable, TemplateRef, Type} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable, of} from 'rxjs';
-import {map} from 'rxjs/operators';
-import {tap} from 'rxjs/internal/operators';
-import {ModalMessageComponent} from '../../ui/modal-message/modal-message.component';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+
+import {Observable} from 'rxjs';
+import {map, tap} from 'rxjs/operators';
+
+import {environment} from '../../../environments/environment';
+
 
 /*  "username": "in.tsukanov";
-    "password": "c67"*/
+    "password": "c67"
+    ' http://172.17.34.37:8080/JetB2/api/dictionaries';
+    ' http://172.17.34.37:8080/JetB2/api/issues';
+    */
 
 @Injectable({
   providedIn: 'root'
@@ -15,20 +20,24 @@ import {ModalMessageComponent} from '../../ui/modal-message/modal-message.compon
 export class AuthService {
   redirectUrl: string = '/issue';
   currentUser: string = null;
-  authorized = false;
 
-
-  private url: string = 'http://172.17.34.37:8080/JetB2/api/login';
-  private url1: string = ' http://172.17.34.37:8080/JetB2/api/dictionaries';
-  private url2: string = ' http://172.17.34.37:8080/JetB2/api/issues';
-
-
+  private apiUrl = environment.apiUrl;
+  private urlAuth = {
+    login: '/login',
+    loggedIn: '/loggedIn',
+    logout: '/logout'
+  };
 
   constructor(private http: HttpClient) { }
 
-  isAuthorized(): boolean {
-    return this.authorized;
+  isAuthorized(): Observable<boolean> {
+    const url = this.apiUrl + '' + this.urlAuth.loggedIn;
+    return this.http.get(url, {withCredentials: true})
+      .pipe(
+        map((value: {data: boolean}) => value.data)
+      );
   }
+
 
   login(name: string, password: string): Observable<boolean> {
 
@@ -36,30 +45,21 @@ export class AuthService {
     formData.append('username', name);
     formData.append('password', password);
 
-
-    return this.http.post(this.url, formData, {withCredentials: true})
+    const url = this.apiUrl + '' + this.urlAuth.login;
+    return this.http.post(url, formData, {withCredentials: true})
       .pipe(
-        map( (value: {sucess: boolean}) => value.sucess),
-        tap(value => console.log('value ', value))
+        map( (value: {success: boolean}) => value.success)
       );
   }
 
   logout(): void {
-    this.authorized = false;
     this.currentUser = null;
+    const url = this.apiUrl + '' + this.urlAuth.logout;
+    this.http.post(url, {withCredentials: true})
+      .pipe(
+        tap(value => console.log('logout() ', value))
+      ).subscribe();
   }
 
- /* get() {
-    setTimeout(
-      () => {
-        this.http.get(this.url2, {withCredentials: true})
-          .subscribe(
-            (val) => console.log('val2 = ', val),
-            (error) => console.log('error2 = ', error)
-          );
-      },
-      2000
-    );
-  }*/
 }
 
