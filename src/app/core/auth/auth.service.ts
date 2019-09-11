@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
-import {Observable} from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import {map, tap} from 'rxjs/operators';
 
 import {environment} from '../../../environments/environment';
@@ -19,7 +19,9 @@ import {environment} from '../../../environments/environment';
 
 export class AuthService {
   redirectUrl: string = '/issue';
-  currentUser: string = null;
+  private user = new BehaviorSubject('');
+  currentUser = this.user.asObservable();
+
 
   private apiUrl = environment.apiUrl;
   private urlAuth = {
@@ -38,28 +40,37 @@ export class AuthService {
       );
   }
 
-
   login(name: string, password: string): Observable<boolean> {
-
     const formData = new FormData();
     formData.append('username', name);
     formData.append('password', password);
 
     const url = this.apiUrl + '' + this.urlAuth.login;
+    this.user.next(name);
+
+    this.http.get('http://172.17.34.37:8080/JetB2/api/issues', {withCredentials: true})
+      .pipe(
+        map((value) => console.log('issue::: ', value))
+      ).subscribe(
+      (val) =>  console.log('issue val::: ', val),
+      (error) =>  console.log('issue error::: ', error)
+    );
+
     return this.http.post(url, formData, {withCredentials: true})
       .pipe(
         map( (value: {success: boolean}) => value.success)
       );
+
+
   }
 
   logout(): void {
-    this.currentUser = null;
+    this.user.next(null);
     const url = this.apiUrl + '' + this.urlAuth.logout;
     this.http.post(url, {withCredentials: true})
       .pipe(
         tap(value => console.log('logout() ', value))
       ).subscribe();
   }
-
 }
 

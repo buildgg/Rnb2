@@ -1,5 +1,7 @@
-import {AfterContentInit, Component, ContentChild, ContentChildren, ElementRef, Input, OnInit, QueryList, TemplateRef} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {animate, style, transition, trigger} from '@angular/animations';
+
 import {AuthService} from '../../core/auth/auth.service';
 
 @Component({
@@ -13,14 +15,22 @@ import {AuthService} from '../../core/auth/auth.service';
   )]
 })
 export class LayoutComponent implements OnInit {
-  loginUser: string;
   @Input() title: string = 'заявки';
   @Input() isVisibleHiddenBox: boolean = false;
 
+  loginUser: string;
+
+  constructor(private authService: AuthService,
+              private router: Router) {}
+
   ngOnInit() {
-    this.loginUser = this.authService.currentUser;
+    this.authService.currentUser.subscribe(
+        (value: string) => this.loginUser = value
+      );
   }
 
-  constructor(private authService: AuthService) {}
-
+  onLogout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
 }

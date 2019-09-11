@@ -1,4 +1,6 @@
-<rnb-header [loginUser]="loginUser"></rnb-header>
+<rnb-header [loginUser]="loginUser"
+            (logout)="onLogout()"
+></rnb-header>
 <main class="rnb-container-column">
   <section class="rnb-content">
     <h3 class="rnb-content-title">{{title}}</h3>

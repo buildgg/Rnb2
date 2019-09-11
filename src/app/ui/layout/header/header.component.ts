@@ -1,6 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {AuthService} from '../../../core/auth/auth.service';
-import {Router} from '@angular/router';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'rnb-header',
@@ -9,12 +7,10 @@ import {Router} from '@angular/router';
 })
 export class HeaderComponent {
   @Input() loginTime: Date = new Date();
-  @Input() loginUser: string = 'Admin';
+  @Input() loginUser: string;
+  @Output() logout = new EventEmitter<any>();
 
-  constructor(private authSevice: AuthService, private router: Router) {}
-
-  logout() {
-    this.authSevice.logout();
-    this.router.navigate(['/login']);
+  onLogout() {
+    this.logout.emit();
   }
 }
