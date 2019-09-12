@@ -1,11 +1,16 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
 import {Column} from '../ui/table/rnb-table/table';
 import {FilterItem} from '../ui/filter/filter-list/filter-item';
-import {Issue} from './issue';
+import {Issue} from './model/issue';
 import {ModalService} from '../ui/modal/modal.service';
+import {IssueService} from './issue.service';
+import {IssueView} from './model/issue-view';
+import {map} from 'rxjs/operators';
+import {Subscription} from 'rxjs';
 
+/*
 
 const COLUMNS: Column[] = [
   {columnDef: 'univid', headerName: 'UNIVID', width: '40px',
@@ -21,103 +26,9 @@ const COLUMNS: Column[] = [
   {columnDef: 'budgetArticleTypesname', headerName: 'Тип бюджетных статей', width: '40px',
     classCss: 'rnb-column-text-align-center'},
   {columnDef: 'justification', headerName: 'Обоснование заявки', width: '300px' },
-
-
-/*
-  {columnDef: 'count', headerName: 'Количество', width: '40px'},
-
-
-  {columnDef: 'responsiblePerson', headerName: 'Ответственный',  width: '150px'},
-  {columnDef: 'collectionName', headerName: 'Свод',  width: '100px'},
-  {columnDef: 'date', headerName: 'Дата', width: '100px'}*/
 ];
+*/
 
-const ISSUES = [
-  {
-    univid: '1',
-    id: '101',
-    issueno: '123',
-    budgetdate: '2017-02-12',
-    issuer: 'Распорядитель IT',
-    svodno: '4367',
-    currolename: 'Хамза Хакимзаде Ния',
-    svoddate: '2017-10-12',
-    description: 'Очень необходимо два офисных стулья для чень необходимо',
-    justification: 'Сидеть не на чем два офисных стулья для чень необходимо',
-    budgetArticleTypesname: 'IT',
-    site: '120'
-  },
-  {
-    univid: '2',
-    id: '103',
-    issueno: '124',
-    budgetdate: '2018-02-12',
-    issuer: 'Распорядитель IT',
-    svodno: '43345',
-    currolename: 'Хамза Хакимзаде Ния',
-    svoddate: '2018-10-12',
-    description: 'Очень необходимо два офисных стулья для чень необходимо',
-    justification: 'Сидеть не на чем два офисных стулья для чень необходимо',
-    budgetArticleTypesname: 'ADMIN',
-    site: '123'
-  },
-  {
-    univid: '3',
-    id: '105',
-    issueno: '126',
-    budgetdate: '2018-06-12',
-    issuer: 'Распорядитль IT',
-    svodno: '89',
-    currolename: 'Хамза Хакимзаде Ния',
-    svoddate: '2018-10-12',
-    description: 'Очень необходимо два офисных стулья для чень необходимо',
-    justification: 'Сидеть не на чем два офисных стулья для чень необходимо',
-    budgetArticleTypesname: 'LEX',
-    site: '780'
-  },
-  {
-    univid: '4',
-    id: '1654',
-    issueno: '123',
-    budgetdate: '2017-02-12',
-    issuer: 'Распорядитель IT',
-    svodno: '4367',
-    currolename: 'Хамза Хакимзаде Ния',
-    svoddate: '2017-10-12',
-    description: 'Очень необходимо два офисных стулья для чень необходимо',
-    justification: 'Сидеть не на чем два офисных стулья для чень необходимо',
-    budgetArticleTypesname: 'IT',
-    site: '780'
-  },
-  {
-    univid: '5',
-    id: '12356',
-    issueno: '123',
-    budgetdate: '2017-02-12',
-    issuer: 'Распорядитель IT',
-    svodno: '4367',
-    currolename: 'Хамза Хакимзаде Ния',
-    svoddate: '2017-10-12',
-    description: 'Очень необходимо два офисных стулья для чень необходимо',
-    justification: 'Сидеть не на чем два офисных стулья для чень необходимо',
-    budgetArticleTypesname: 'IT',
-    site: '120'
-  },
-  {
-    univid: '6',
-    id: '15688',
-    issueno: '123',
-    budgetdate: '2017-02-12',
-    issuer: 'Распорядитель IT',
-    svodno: '4367',
-    currolename: 'Хамза Хакимзаде Ния',
-    svoddate: '2017-10-12',
-    description: 'Очень необходимо два офисных стулья для чень необходимо',
-    justification: 'Сидеть не на чем два офисных стулья для чень необходимо',
-    budgetArticleTypesname: 'IT',
-    site: '120'
-  },
-];
 
 @Component({
   selector: 'rnb-issue',
@@ -125,16 +36,38 @@ const ISSUES = [
   styleUrls: ['./issues.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class IssuesComponent {
-  columns: Column[] = COLUMNS;
-  issueList = ISSUES;
+export class IssuesComponent implements OnInit, OnDestroy {
+  columns: Column[];
+  issueList: IssueView[];
   selectedRowId: string = null;
   filterItems: string[];
   visibleHiddenBoxLayout: boolean = false;
 
+  private issueSub: Subscription;
+  private columnSub: Subscription;
+
+
   constructor(private router: Router,
               private route: ActivatedRoute,
-              private modal: ModalService) {}
+              private modal: ModalService,
+              private issueService: IssueService) {}
+
+   ngOnInit() {
+    this.issueSub = this.issueService.getIssues()
+      .pipe(
+        map((val: Issue[]) => this.fromIssueToIssueView(val)))
+      .subscribe((val) => {
+        console.log('issues[]: ', val);
+        this.issueList = val;
+      });
+
+    this.columnSub = this.issueService.getColumns().subscribe(
+      (v: Column[]) => {
+        console.log('Column[]: ', v);
+        this.columns = v;
+      }
+    );
+   }
 
   onFilterItems(filterItems: FilterItem[]) {
     this.visibleHiddenBoxLayout = true;
@@ -154,5 +87,19 @@ export class IssuesComponent {
     console.log('issue: ' , issue);
     this.router.navigate([issue.site, issue.id, 'edit'], {relativeTo: this.route} );
   }
+/*  isLoadedData() {
+    return this.columns !== undefined && this.issueList !== undefined;
+  }*/
 
+  private fromIssueToIssueView(issues: Issue[]): IssueView[] {
+    return issues.map(value => {
+        return new IssueView(value);
+    }
+    );
+  }
+
+  ngOnDestroy() {
+    this.issueSub.unsubscribe();
+    this.columnSub.unsubscribe();
+  }
 }

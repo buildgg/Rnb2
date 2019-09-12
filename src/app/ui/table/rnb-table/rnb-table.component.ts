@@ -24,12 +24,12 @@ export class RnbTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
 
-
-
   ngOnInit() {
-    this.displayedColumns = ['select']
-      .concat(this.columns.map(value => value.columnDef).concat(['actions']));
+      this.displayedColumns = ['select']
+        .concat(this.columns.map(value => value.columnDef).concat(['actions']));
+
     /*this.displayedColumns = this.columns.map(value => value.columnDef);*/
+
     this.dataSource = new MatTableDataSource(this.dataList);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;

@@ -48,13 +48,13 @@ export class AuthService {
     const url = this.apiUrl + '' + this.urlAuth.login;
     this.user.next(name);
 
-    this.http.get('http://172.17.34.37:8080/JetB2/api/issues', {withCredentials: true})
+/*    this.http.get('http://172.17.34.37:8080/JetB2/api/issues', {withCredentials: true})
       .pipe(
         map((value) => console.log('issue::: ', value))
       ).subscribe(
       (val) =>  console.log('issue val::: ', val),
       (error) =>  console.log('issue error::: ', error)
-    );
+    );*/
 
     return this.http.post(url, formData, {withCredentials: true})
       .pipe(

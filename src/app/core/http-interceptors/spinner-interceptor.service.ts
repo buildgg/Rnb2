@@ -12,16 +12,19 @@ export class SpinnerInterceptorService implements HttpInterceptor {
 
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
-    this.spinnerService.start();
+    if (!req.url.includes('assets')) {
+      this.spinnerService.start();
+    }
     return next.handle(req).
       pipe(
         tap(
-          (event) => console.log('Interceptor *** ', event)
+          (event) => {
+           /* console.log('Interceptor *** ', event);*/
+          }
         ),
       finalize(
         () => {
-       /*   console.log('finalize *** ');*/
+          console.log('finalize *** ', req.url);
           this.spinnerService.destroy();
         }
       )

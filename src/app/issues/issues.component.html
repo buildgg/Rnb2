@@ -1,5 +1,4 @@
 <rnb-layout [isVisibleHiddenBox]="visibleHiddenBoxLayout">
-
   <div class="rnb-box">
     <rnb-filter (filterItems)="onFilterItems($event)"></rnb-filter>
     <rnb-operation></rnb-operation>
@@ -12,14 +11,20 @@
     ></rnb-filter-list>
   </div>
 
-
+  <div *ngIf = "columns && issueList">
   <rnb-table class=".main"
     [columns]="columns"
     [dataList]="issueList"
     [selectedRowId]="selectedRowId"
     (edit)="onEdit($event)">
   </rnb-table>
+  </div>
 </rnb-layout>
+
+
+<ng-template #loading>
+  <rnb-spinner></rnb-spinner>
+</ng-template>
 <!--<rnb-spinner></rnb-spinner>-->
 
 <!--    [tableButtons]="tableButtons"

@@ -1,0 +1,63 @@
+{
+  "columns": [
+    {
+      "columnDef": "univid",
+      "headerName": "UNIVID",
+      "width": "40px",
+      "classCss": "rnb-column-text-align-center"
+    },
+    {
+      "columnDef": "id",
+      "headerName": "ID",
+      "width": "40px"
+    },
+    {
+      "columnDef": "issueno",
+      "headerName": "№ Заявки",
+      "width": "40px"
+    },
+    {
+      "columnDef": "budgetdate",
+      "headerName": "Дата бюджета",
+      "width": "40px",
+      "datePipe": "true"
+    },
+    {
+      "columnDef": "issuer",
+      "headerName": "Инициатор",
+      "width": "150px"
+    },
+    {
+      "columnDef": "svodno",
+      "headerName": "№ свода",
+      "width": "80px"
+    },
+    {
+      "columnDef": "currolename",
+      "headerName": "Ответственный",
+      "width": "150px"
+    },
+    {
+      "columnDef": "svoddate",
+      "headerName": "Дата свода",
+      "width": "120px",
+      "datePipe": "true"
+    },
+    {
+      "columnDef": "description",
+      "headerName": "Описание",
+      "width": "300px"
+    },
+    {
+      "columnDef": "budgetArticleTypesname",
+      "headerName": "Тип бюджетных статей",
+      "width": "40px",
+      "classCss": "rnb-column-text-align-center"
+    },
+    {
+      "columnDef": "justification",
+      "headerName": "Обоснование заявки",
+      "width": "300px"
+    }
+  ]
+}
