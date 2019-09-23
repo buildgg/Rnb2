@@ -16,8 +16,10 @@
 .rnb-edit--main-column-second
 {
   display: flex;
-  width: 47%;
+  width: 100%;
   flex-wrap: wrap;
+  margin-bottom: 20px;
+  justify-content: space-between;
 }
 .rnb-edit--main-column-first {
   background-color: #eaf4ff;
@@ -33,7 +35,9 @@
   color: #FFFFFF;
   margin-bottom: 5px;
   height: 24px;
-
+}
+.rnb-edit--main-column-title-grid {
+  margin-bottom: 0;
 }
 
 .rnb-edit--main-column-second {
@@ -64,6 +68,7 @@
   box-sizing: border-box;
   padding: 5px 3px 5px 5px;
   line-height: 25px;
+  font-size: 16px;
 }
 
 .rnb-edit--field-input-date {
@@ -85,5 +90,8 @@
   resize: none;
 }
 rnb-grid {
-  width: 90%;
+  width: 100%;
+}
+input:disabled {
+  background-color: #99cff742;
 }

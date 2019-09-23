@@ -18,7 +18,9 @@
   </tr>
   </tbody>
   <tfoot>
-  <tr><ng-container *ngTemplateOutlet="isAddFooter();"></ng-container></tr>
+  <tr>
+    <ng-container *ngTemplateOutlet="isAddFooterTemplate()"></ng-container>
+  </tr>
   </tfoot>
 </table>
 </div>
@@ -65,7 +67,7 @@
 <ng-template #footerTable>
     <td *ngFor="let cell of headers" class="rnb-grid--template-footer" >
     <ng-container *ngIf="cell.column === footerFieldName">
-      {{footer}}
+      {{footer | json}}
     </ng-container>
   </td>
 </ng-template>

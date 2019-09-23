@@ -52,7 +52,7 @@ export class LookUpComponent implements AfterViewChecked, OnDestroy, OnInit,  Co
   }
 
   writeValue(value: any ): void {
-    console.log(` -- writeValue() -- ${value}`);
+   /* console.log(` -- writeValue() -- ${value}`);*/
     this.value = value;
   }
 

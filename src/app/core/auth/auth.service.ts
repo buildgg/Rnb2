@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import {map, tap} from 'rxjs/operators';
 
 import {environment} from '../../../environments/environment';
+import {finalize} from 'rxjs/internal/operators';
 
 
 /*  "username": "in.tsukanov";
@@ -64,13 +65,22 @@ export class AuthService {
 
   }
 
-  logout(): void {
+  logout() {
     this.user.next(null);
     const url = this.apiUrl + '' + this.urlAuth.logout;
-    this.http.post(url, {withCredentials: true})
+    console.log('logout() url', url);
+
+    this.http.post(url, null, {withCredentials: true})
       .pipe(
-        tap(value => console.log('logout() ', value))
-      ).subscribe();
+        tap(value => console.log('logout() ', value)),
+        finalize(
+          () => console.log('logout() finalize DONE')),
+
+      ).subscribe(
+        (sub) => {
+          console.log('logout() sub', sub);
+        }
+      );
   }
 }
 

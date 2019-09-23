@@ -73,5 +73,5 @@ export class Issue {
   tss3divisionid: string;
   tss3divisionname: string;
   utilizedamount: string;
-  goodsWorksList: GoodsWork;
+  goodsWorksList: GoodsWork[];
 }

@@ -13,17 +13,17 @@ export class IssueView {
   public site: string;
 
   constructor(obj: any) {
-    this.id = obj.ID;
-    this.univid = obj.UNIVID;
-    this.issueno = obj.ISSUENO;
-    this.budgetdate = obj.BUDGETDATE;
-    this.issuer = obj.ISSUER;
-    this.svodno = obj.SVODNO;
-    this.currolename = obj.CURROLENAME;
-    this.svoddate = obj.SVODDATE;
-    this.description = obj.DESCRIPTION;
-    this.justification = obj.JUSTIFICATION;
-    this.budgetArticleTypesname = obj.BUDGETARTICLETYPESNAME;
-    this.site = obj.SITEID;
+    this.id = obj.id;
+    this.univid = obj.univid;
+    this.issueno = obj.issueno;
+    this.budgetdate = obj.budgetdate;
+    this.issuer = obj.issuer;
+    this.svodno = obj.svodno;
+    this.currolename = obj.currolename;
+    this.svoddate = obj.svoddate;
+    this.description = obj.description;
+    this.justification = obj.justification;
+    this.budgetArticleTypesname = obj.budgetarticletypesname;
+    this.site = obj.siteid;
   }
 }

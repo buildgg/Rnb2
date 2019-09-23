@@ -9,6 +9,7 @@ import {IssueService} from './issue.service';
 import {IssueView} from './model/issue-view';
 import {map} from 'rxjs/operators';
 import {Subscription} from 'rxjs';
+import {SettingsService} from '../core/settings.service';
 
 /*
 
@@ -50,24 +51,31 @@ export class IssuesComponent implements OnInit, OnDestroy {
   constructor(private router: Router,
               private route: ActivatedRoute,
               private modal: ModalService,
-              private issueService: IssueService) {}
+              private issueService: IssueService,
+              private settingsService: SettingsService) {}
 
    ngOnInit() {
     this.issueSub = this.issueService.getIssues()
       .pipe(
         map((val: Issue[]) => this.fromIssueToIssueView(val)))
       .subscribe((val) => {
-        console.log('issues[]: ', val);
+  /*      console.log('issues[]: ', val);*/
         this.issueList = val;
       });
 
-    this.columnSub = this.issueService.getColumns().subscribe(
+     this.columnSub = this.settingsService.getColumns('columnsIssue').subscribe(
+       (v) => this.columns = v
+     );
+
+  /*  this.columnSub = this.issueService.getColumns().subscribe(
       (v: Column[]) => {
         console.log('Column[]: ', v);
         this.columns = v;
       }
-    );
-   }
+    );*/
+
+
+  }
 
   onFilterItems(filterItems: FilterItem[]) {
     this.visibleHiddenBoxLayout = true;
@@ -87,9 +95,6 @@ export class IssuesComponent implements OnInit, OnDestroy {
     console.log('issue: ' , issue);
     this.router.navigate([issue.site, issue.id, 'edit'], {relativeTo: this.route} );
   }
-/*  isLoadedData() {
-    return this.columns !== undefined && this.issueList !== undefined;
-  }*/
 
   private fromIssueToIssueView(issues: Issue[]): IssueView[] {
     return issues.map(value => {
